@@ -1,0 +1,3401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{599FBB88-A7CB-44BF-AEF9-7AA5BF01E13C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KUAPPAS</RootNamespace>
+    <AssemblyName>SIKUAT</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>42846fc1</NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip.Reduced, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SIMASETelum108 Ketapang\Updater\Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Akrual\KUAPPAS2510\KUAPPAS\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.office.interop.word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Akrual\KUAPPAS2510\KUAPPAS\bin\Debug\microsoft.office.interop.word.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.Excel.2.1.1\lib\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Rahul.Office, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\Rahul.Office.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=23.1460.43.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.23.1.43\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=23.1460.43.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.23.1.43\lib\net46\Syncfusion.Licensing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=23.1460.43.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.23.1.43\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.PdfToImageConverter.Base, Version=23.1460.43.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.PdfToImageConverter.WinForms.23.1.43\lib\net46\Syncfusion.PdfToImageConverter.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.PdfViewer.Windows, Version=23.1460.43.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.PdfViewer.Windows.23.1.43\lib\net46\Syncfusion.PdfViewer.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=23.1460.43.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.23.1.43\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AesOperation.cs" />
+    <Compile Include="Akunting\ctrlBukuBesar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Akunting\ctrlBukuBesar.Designer.cs">
+      <DependentUpon>ctrlBukuBesar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\ctrlDaftarRekeningJurnal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Akunting\ctrlDaftarRekeningJurnal.Designer.cs">
+      <DependentUpon>ctrlDaftarRekeningJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\ctrlJenisJurnalPenyesuaian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Akunting\ctrlJenisJurnalPenyesuaian.Designer.cs">
+      <DependentUpon>ctrlJenisJurnalPenyesuaian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\ctrlJenisSumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Akunting\ctrlJenisSumber.Designer.cs">
+      <DependentUpon>ctrlJenisSumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmBukuBesar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmBukuBesar.Designer.cs">
+      <DependentUpon>frmBukuBesar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmBukuBesarDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmBukuBesarDlg.Designer.cs">
+      <DependentUpon>frmBukuBesarDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmCetakPerda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmCetakPerda.designer.cs">
+      <DependentUpon>frmCetakPerda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmInputNeracaAwal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmInputNeracaAwal.Designer.cs">
+      <DependentUpon>frmInputNeracaAwal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmInputRealisasiPerRekening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmInputRealisasiPerRekening.Designer.cs">
+      <DependentUpon>frmInputRealisasiPerRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmJurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmJurnal.Designer.cs">
+      <DependentUpon>frmJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmJurnalTrx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmJurnalTrx.Designer.cs">
+      <DependentUpon>frmJurnalTrx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmLaporanJurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmLaporanJurnal.Designer.cs">
+      <DependentUpon>frmLaporanJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmLaporanLPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmLaporanLPE.Designer.cs">
+      <DependentUpon>frmLaporanLPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmListJurnal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmListJurnal.Designer.cs">
+      <DependentUpon>frmListJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmLO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmLO.Designer.cs">
+      <DependentUpon>frmLO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmLRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmLRA.Designer.cs">
+      <DependentUpon>frmLRA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmNeraca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmNeraca.Designer.cs">
+      <DependentUpon>frmNeraca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmPerbandingan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmPerbandingan.Designer.cs">
+      <DependentUpon>frmPerbandingan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmPosting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmPosting.Designer.cs">
+      <DependentUpon>frmPosting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmRealisasiPerUrusan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmRealisasiPerUrusan.Designer.cs">
+      <DependentUpon>frmRealisasiPerUrusan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmRegisterSP2DBPK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmRegisterSP2DBPK.Designer.cs">
+      <DependentUpon>frmRegisterSP2DBPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmRekap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmRekap.Designer.cs">
+      <DependentUpon>frmRekap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\frmSelisihTrxBB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akunting\frmSelisihTrxBB.Designer.cs">
+      <DependentUpon>frmSelisihTrxBB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akunting\LaporanPerda_SPM.cs" />
+    <Compile Include="Akunting\LaporanPerda_V.cs" />
+    <Compile Include="Akunting\LaporanPerkada_1_1.cs" />
+    <Compile Include="Akunting\LaporanPerkada_1.cs" />
+    <Compile Include="Akunting\LaporanLRARinci.cs" />
+    <Compile Include="Akunting\LaporanPerkada_1_2.cs" />
+    <Compile Include="Akunting\LaporanPerda_1_4.cs" />
+    <Compile Include="Akunting\LaporanPerda_1_3.cs" />
+    <Compile Include="Akunting\LaporanPerda_1_2.cs" />
+    <Compile Include="Akunting\LaporanPerda_1.cs" />
+    <Compile Include="Akunting\NoUrutDanJenis.cs" />
+    <Compile Include="Akunting\tabJurnalRekening.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Akunting\tabJurnalRekening.Designer.cs">
+      <DependentUpon>tabJurnalRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\ctrlProgramKegiatanSub.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Anggaran\ctrlProgramKegiatanSub.Designer.cs">
+      <DependentUpon>ctrlProgramKegiatanSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\ctrlTahapAnggaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Anggaran\ctrlTahapAnggaran.Designer.cs">
+      <DependentUpon>ctrlTahapAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\frmAnggaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anggaran\frmAnggaran.Designer.cs">
+      <DependentUpon>frmAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\frmCekAnggaranKas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anggaran\frmCekAnggaranKas.Designer.cs">
+      <DependentUpon>frmCekAnggaranKas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\frmCekSPJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anggaran\frmCekSPJ.Designer.cs">
+      <DependentUpon>frmCekSPJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\frmEditAnggaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anggaran\frmEditAnggaran.Designer.cs">
+      <DependentUpon>frmEditAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\frmPilihUnitKerja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anggaran\frmPilihUnitKerja.Designer.cs">
+      <DependentUpon>frmPilihUnitKerja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\gridTreeAnggaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Anggaran\gridTreeAnggaran.Designer.cs">
+      <DependentUpon>gridTreeAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\treeAnggaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Anggaran\treeAnggaran.Designer.cs">
+      <DependentUpon>treeAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anggaran\treeStruktuAnggaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Anggaran\treeStruktuAnggaran.Designer.cs">
+      <DependentUpon>treeStruktuAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArgumenThread.cs" />
+    <Compile Include="Bendahara\clsCetakSPP.cs" />
+    <Compile Include="Bendahara\clsParameterLaporan.cs" />
+    <Compile Include="Bendahara\ctrlAlasanPenolakan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlAlasanPenolakan.Designer.cs">
+      <DependentUpon>ctrlAlasanPenolakan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlBAST.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlBAST.Designer.cs">
+      <DependentUpon>ctrlBAST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisGaji.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisGaji.Designer.cs">
+      <DependentUpon>ctrlJenisGaji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlNamaFileImportSTS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlNamaFileImportSTS.Designer.cs">
+      <DependentUpon>ctrlNamaFileImportSTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPilihanRekeningAnggaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPilihanRekeningAnggaran.Designer.cs">
+      <DependentUpon>ctrlPilihanRekeningAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlDaftarBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlDaftarBank.Designer.cs">
+      <DependentUpon>ctrlDaftarBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisBelanja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisBelanja.Designer.cs">
+      <DependentUpon>ctrlJenisBelanja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisBelanjaSPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisBelanjaSPP.Designer.cs">
+      <DependentUpon>ctrlJenisBelanjaSPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisPenerimaan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisPenerimaan.Designer.cs">
+      <DependentUpon>ctrlJenisPenerimaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisSKRSKPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisSKRSKPD.Designer.cs">
+      <DependentUpon>ctrlJenisSKRSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisTrxBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisTrxBank.Designer.cs">
+      <DependentUpon>ctrlJenisTrxBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlKontrak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlKontrak.Designer.cs">
+      <DependentUpon>ctrlKontrak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlCombPotongan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlCombPotongan.Designer.cs">
+      <DependentUpon>ctrlCombPotongan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlListKontrak.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlListKontrak.Designer.cs">
+      <DependentUpon>ctrlListKontrak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPanelPencarian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPanelPencarian.Designer.cs">
+      <DependentUpon>ctrlPanelPencarian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPanjar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPanjar.Designer.cs">
+      <DependentUpon>ctrlPanjar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPenandaTanganSP2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPenandaTanganSP2D.Designer.cs">
+      <DependentUpon>ctrlPenandaTanganSP2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPeriode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPeriode.Designer.cs">
+      <DependentUpon>ctrlPeriode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPerusahaan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPerusahaan.Designer.cs">
+      <DependentUpon>ctrlPerusahaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPihakKetiga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPihakKetiga.Designer.cs">
+      <DependentUpon>ctrlPihakKetiga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPilihanPotongan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlPilihanPotongan.Designer.cs">
+      <DependentUpon>ctrlPilihanPotongan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSetor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSetor.Designer.cs">
+      <DependentUpon>ctrlSetor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSKPDSKPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSKPDSKPD.Designer.cs">
+      <DependentUpon>ctrlSKPDSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSPP.Designer.cs">
+      <DependentUpon>ctrlSPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSubSumberDana.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSubSumberDana.Designer.cs">
+      <DependentUpon>ctrlSubSumberDana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSumberDanaLengkap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlSumberDanaLengkap.Designer.cs">
+      <DependentUpon>ctrlSumberDanaLengkap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlTanggalBulan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlTanggalBulan.Designer.cs">
+      <DependentUpon>ctrlTanggalBulan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlTanggalBulanVertikal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlTanggalBulanVertikal.Designer.cs">
+      <DependentUpon>ctrlTanggalBulanVertikal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\EnumJenisRedaksi.cs" />
+    <Compile Include="Bendahara\frmBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmBank.Designer.cs">
+      <DependentUpon>frmBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmbataUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmbataUP.Designer.cs">
+      <DependentUpon>frmbataUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmBukuKas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmBukuKas.Designer.cs">
+      <DependentUpon>frmBukuKas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmCariKontrak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmCariKontrak.Designer.cs">
+      <DependentUpon>frmCariKontrak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmCekBKU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmCekBKU.Designer.cs">
+      <DependentUpon>frmCekBKU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmCekPajakDanPenyetorannya.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmCekPajakDanPenyetorannya.Designer.cs">
+      <DependentUpon>frmCekPajakDanPenyetorannya.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmDashBoardBendahara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmDashBoardBendahara.Designer.cs">
+      <DependentUpon>frmDashBoardBendahara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmImportPendapatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmImportPendapatan.Designer.cs">
+      <DependentUpon>frmImportPendapatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListPenyetoranKasda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListPenyetoranKasda.Designer.cs">
+      <DependentUpon>frmListPenyetoranKasda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListTerimaSTSKasda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListTerimaSTSKasda.Designer.cs">
+      <DependentUpon>frmListTerimaSTSKasda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmLPJTU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmLPJTU.Designer.cs">
+      <DependentUpon>frmLPJTU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmLRAAnngaranKas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmLRAAnngaranKas.Designer.cs">
+      <DependentUpon>frmLRAAnngaranKas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPajak2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPajak2.Designer.cs">
+      <DependentUpon>frmPajak2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPajakDanSetorannya.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPajakDanSetorannya.Designer.cs">
+      <DependentUpon>frmPajakDanSetorannya.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPelimpahanSubKegiatanKeUK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPelimpahanSubKegiatanKeUK.Designer.cs">
+      <DependentUpon>frmPelimpahanSubKegiatanKeUK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPenerimaanSPM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPenerimaanSPM.Designer.cs">
+      <DependentUpon>frmPenerimaanSPM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranBukuRincianObjerk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranBukuRincianObjerk.Designer.cs">
+      <DependentUpon>frmPengeluaranBukuRincianObjerk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranLapKartuKendali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranLapKartuKendali.Designer.cs">
+      <DependentUpon>frmPengeluaranLapKartuKendali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmKoreksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmKoreksi.Designer.cs">
+      <DependentUpon>frmKoreksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPenerimaanPenerimaandanPenyetoran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPenerimaanPenerimaandanPenyetoran.Designer.cs">
+      <DependentUpon>frmPenerimaanPenerimaandanPenyetoran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranLaporanPenutupanKas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranLaporanPenutupanKas.Designer.cs">
+      <DependentUpon>frmPengeluaranLaporanPenutupanKas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListKoreksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListKoreksi.Designer.cs">
+      <DependentUpon>frmListKoreksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListLPJUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListLPJUP.Designer.cs">
+      <DependentUpon>frmListLPJUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListPengembalianBelanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListPengembalianBelanja.Designer.cs">
+      <DependentUpon>frmListPengembalianBelanja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListPenyetoranPajak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListPenyetoranPajak.Designer.cs">
+      <DependentUpon>frmListPenyetoranPajak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListPPTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListPPTK.Designer.cs">
+      <DependentUpon>frmListPPTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListSPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListSPP.Designer.cs">
+      <DependentUpon>frmListSPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmBKU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmBKU.Designer.cs">
+      <DependentUpon>frmBKU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranCariPerusahaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranCariPerusahaan.Designer.cs">
+      <DependentUpon>frmPengeluaranCariPerusahaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmCekSPDRealisasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmCekSPDRealisasi.Designer.cs">
+      <DependentUpon>frmCekSPDRealisasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmKontrak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmKontrak.Designer.cs">
+      <DependentUpon>frmKontrak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListBAST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListBAST.Designer.cs">
+      <DependentUpon>frmListBAST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListPengeluaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListPengeluaran.Designer.cs">
+      <DependentUpon>frmListPengeluaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListKontrak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListKontrak.Designer.cs">
+      <DependentUpon>frmListKontrak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListPenerimaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListPenerimaan.Designer.cs">
+      <DependentUpon>frmListPenerimaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListSKRSKPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListSKRSKPD.Designer.cs">
+      <DependentUpon>frmListSKRSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListSPPBUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListSPPBUD.Designer.cs">
+      <DependentUpon>frmListSPPBUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmListTransaksiBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmListTransaksiBank.Designer.cs">
+      <DependentUpon>frmListTransaksiBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmLPJUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmLPJUP.Designer.cs">
+      <DependentUpon>frmLPJUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPajak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPajak.Designer.cs">
+      <DependentUpon>frmPajak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaran.Designer.cs">
+      <DependentUpon>frmPengeluaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranPengembalian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPengeluaranPengembalian.Designer.cs">
+      <DependentUpon>frmPengeluaranPengembalian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPerbaikiNoBKU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPerbaikiNoBKU.Designer.cs">
+      <DependentUpon>frmPerbaikiNoBKU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmBUDRegisterSP2D.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmBUDRegisterSP2D.Designer.cs">
+      <DependentUpon>frmBUDRegisterSP2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmRegisterSPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmRegisterSPP.Designer.cs">
+      <DependentUpon>frmRegisterSPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmRegisterSTS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmRegisterSTS.Designer.cs">
+      <DependentUpon>frmRegisterSTS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmRekapGaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmRekapGaji.Designer.cs">
+      <DependentUpon>frmRekapGaji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSaldoAwalBendahara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSaldoAwalBendahara.Designer.cs">
+      <DependentUpon>frmSaldoAwalBendahara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSetorPenerimaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSetorPenerimaan.Designer.cs">
+      <DependentUpon>frmSetorPenerimaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmShowDataImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmShowDataImport.Designer.cs">
+      <DependentUpon>frmShowDataImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSKRSKPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSKRSKPD.Designer.cs">
+      <DependentUpon>frmSKRSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSPDdanRealissasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSPDdanRealissasi.Designer.cs">
+      <DependentUpon>frmSPDdanRealissasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSPDKepmen900.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSPDKepmen900.Designer.cs">
+      <DependentUpon>frmSPDKepmen900.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSPJAdministratifPenerimaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSPJAdministratifPenerimaan.Designer.cs">
+      <DependentUpon>frmSPJAdministratifPenerimaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSPJFungsional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSPJFungsional.Designer.cs">
+      <DependentUpon>frmSPJFungsional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSPP.Designer.cs">
+      <DependentUpon>frmSPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmPenerimaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmPenerimaan.Designer.cs">
+      <DependentUpon>frmPenerimaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSUbKegiatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSUbKegiatan.Designer.cs">
+      <DependentUpon>frmSUbKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmTambahPajak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmTambahPajak.Designer.cs">
+      <DependentUpon>frmTambahPajak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmTerimaSetorKasda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmTerimaSetorKasda.Designer.cs">
+      <DependentUpon>frmTerimaSetorKasda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BP\Akuntansi\AnggaranRealisasiLogic.cs" />
+    <Compile Include="BP\Akuntansi\BukuBesarLogic.cs" />
+    <Compile Include="BP\Akuntansi\JurnalLogic.cs" />
+    <Compile Include="BP\Akuntansi\KorelasiPenyesuaianLogic.cs" />
+    <Compile Include="BP\Akuntansi\KorelasiUtangBelanjaLogic.cs" />
+    <Compile Include="BP\Akuntansi\KorlasiLRALOLogic.cs" />
+    <Compile Include="BP\Akuntansi\LapLPELogic.cs" />
+    <Compile Include="BP\Akuntansi\LaporanAPMLogic.cs" />
+    <Compile Include="BP\Akuntansi\PerdaRealisasiVLogic.cs" />
+    <Compile Include="BP\Akuntansi\PerkdaRealisasiRinciLogic.cs" />
+    <Compile Include="BP\Akuntansi\PerkadaRealisasi_1Logic.cs" />
+    <Compile Include="BP\Akuntansi\PerdaRealisasi_1_4Logic.cs" />
+    <Compile Include="BP\Akuntansi\PerdaRealisasi_1_3Logic.cs" />
+    <Compile Include="BP\Akuntansi\PerdaRealisasi_1_2Logic.cs" />
+    <Compile Include="BP\Akuntansi\PerdaRealisasi_1_1Logic.cs" />
+    <Compile Include="BP\Akuntansi\RealisasiTahunSebelumnyaLogic.cs" />
+    <Compile Include="BP\Akuntansi\rptPerdaLogic.cs" />
+    <Compile Include="BP\Bendahara\JenisGajiLogic.cs" />
+    <Compile Include="BP\Bendahara\PajakDanPenyetoranLogic.cs" />
+    <Compile Include="BP\Bendahara\RefPajakLogic.cs" />
+    <Compile Include="BP\Bendahara\SaldoAwalLogic.cs" />
+    <Compile Include="BP\Bendahara\TemplateAlasanLogic.cs" />
+    <Compile Include="BP\KategoriLogic.cs" />
+    <Compile Include="BP\NamaSKPDLogic.cs" />
+    <Compile Include="BP\SInergi\SinergiLogic.cs" />
+    <Compile Include="BP\SubKegiatanBidangLogic.cs" />
+    <Compile Include="ctrlPencarian.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlPencarian.Designer.cs">
+      <DependentUpon>ctrlPencarian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlTextBilling.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTextBilling.Designer.cs">
+      <DependentUpon>ctrlTextBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmx.Designer.cs">
+      <DependentUpon>frmx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu\MenuItems.cs" />
+    <Compile Include="Model\Akuntansi\AnggaranRealisasi.cs" />
+    <Compile Include="Model\Akuntansi\BukuBesar.cs" />
+    <Compile Include="Model\Akuntansi\ClsPosisiKas.cs" />
+    <Compile Include="Model\Akuntansi\EMBelanja.cs" />
+    <Compile Include="Model\Akuntansi\EMPendapatan.cs" />
+    <Compile Include="Model\Akuntansi\JurnalData.cs" />
+    <Compile Include="Model\Akuntansi\JurnalPajak.cs" />
+    <Compile Include="Model\Akuntansi\JurnalRekeningShow.cs" />
+    <Compile Include="Model\Akuntansi\KorelasiLRALO.cs" />
+    <Compile Include="Model\Akuntansi\KorelasiPenyesuaian.cs" />
+    <Compile Include="Model\Akuntansi\KorelasiUtangBelanja.cs" />
+    <Compile Include="Model\Akuntansi\PerdaFungsi.cs" />
+    <Compile Include="Model\Akuntansi\PerdaRealisasi_1_4.cs" />
+    <Compile Include="Model\Akuntansi\PerdaRealisasi_1_3..cs" />
+    <Compile Include="Model\Akuntansi\PerdaRealisasi_1_2.cs" />
+    <Compile Include="Model\Akuntansi\PerdaRealisasi_1.cs" />
+    <Compile Include="Model\Akuntansi\RealisasiPerUrusan.cs" />
+    <Compile Include="Model\Akuntansi\RealisasiRinci.cs" />
+    <Compile Include="Model\Akuntansi\RealisasiTahunSebelumnya.cs" />
+    <Compile Include="Model\Akuntansi\RegisterSP2DBPK.cs" />
+    <Compile Include="Model\Akuntansi\SelisihTrxBB.cs" />
+    <Compile Include="Model\Akuntansi\TProgram.cs" />
+    <Compile Include="Model\Akuntansi\vwRTH.cs" />
+    <Compile Include="Model\Bagian.cs" />
+    <Compile Include="Model\Bendahara\FungsionalDanLRA.cs" />
+    <Compile Include="Model\Bendahara\JenisGaji.cs" />
+    <Compile Include="Model\Bendahara\PajakdanPenyetoran.cs" />
+    <Compile Include="Model\Bendahara\RefPajak.cs" />
+    <Compile Include="Model\Bendahara\SaldoAwal.cs" />
+    <Compile Include="Model\Bendahara\TemplateAlasan.cs" />
+    <Compile Include="Model\clsObjesk.cs" />
+    <Compile Include="Model\Kategori.cs" />
+    <Compile Include="Model\Laporan\CetakanDTH.cs" />
+    <Compile Include="Model\NamaSKPD.cs" />
+    <Compile Include="Model\ReportDesign.cs" />
+    <Compile Include="Model\SubKegiatanBidang..cs" />
+    <Compile Include="DataAccess\frmTerimaSPM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataAccess\frmTerimaSPM.Designer.cs">
+      <DependentUpon>frmTerimaSPM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmTrxBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmTrxBank.Designer.cs">
+      <DependentUpon>frmTrxBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlKodeSetor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlKodeSetor.Designer.cs">
+      <DependentUpon>ctrlKodeSetor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmBAST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmBAST.Designer.cs">
+      <DependentUpon>frmBAST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\MenuBendahara.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\MenuBendahara.Designer.cs">
+      <DependentUpon>MenuBendahara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\frmSPJFungsionalPenerimaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bendahara\frmSPJFungsionalPenerimaan.Designer.cs">
+      <DependentUpon>frmSPJFungsionalPenerimaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BP\Akuntansi\ProsesJurnal2Logic.cs" />
+    <Compile Include="BP\Akuntansi\SaldoAwalRehLogic.cs" />
+    <Compile Include="BP\Anggaran\ProgramKegiatanAnggaranLogic.cs" />
+    <Compile Include="BP\BankOnLine.cs" />
+    <Compile Include="BP\BanksLogic.cs" />
+    <Compile Include="BP\Bendahara\AnggaranKasLogic.cs" />
+    <Compile Include="BP\Bendahara\DaftarBankLogic.cs" />
+    <Compile Include="BP\Bendahara\ItemdPenutupanKas.cs" />
+    <Compile Include="BP\Bendahara\KratuKendaliLogic.cs" />
+    <Compile Include="BP\Bendahara\PenerimaanDanPenyetoranLogic.cs" />
+    <Compile Include="BP\Bendahara\RefSetorLogic.cs" />
+    <Compile Include="BP\Bendahara\RegisterSPPLogic.cs" />
+    <Compile Include="BP\Bendahara\RincianObjekLogic.cs" />
+    <Compile Include="BP\Bendahara\SPJPenerimaanLogic.cs" />
+    <Compile Include="BP\BICBankLogic.cs" />
+    <Compile Include="BP\KORBELANJABARANGLogic.cs" />
+    <Compile Include="BP\OtoritasLogic.cs" />
+    <Compile Include="BP\PenggunaGroupLogic.cs" />
+    <Compile Include="BP\ProgramKegiatanLogiccs.cs" />
+    <Compile Include="BP\RBALogic.cs" />
+    <Compile Include="BP\RenstraSubKegiatanLogic.cs" />
+    <Compile Include="BP\RKBMDLogic.cs" />
+    <Compile Include="BP\SIPD\BelanjaDAL.cs" />
+    <Compile Include="BP\SIPD\BelanjaRinciDAL.cs" />
+    <Compile Include="BP\SP2DOnline\SP2DOnlineService.cs" />
+    <Compile Include="BP\StatusPenggunaLogic.cs" />
+    <Compile Include="BP\TahapRBALogic.cs" />
+    <Compile Include="BP\TKegiatanLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CetakPDF.cs" />
+    <Compile Include="ChildForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm.Designer.cs">
+      <DependentUpon>ChildForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsChildForm.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="ctrlBank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlBank.Designer.cs">
+      <DependentUpon>ctrlBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFooter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlFooter.Designer.cs">
+      <DependentUpon>ctrlFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlFooterMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlFooterMain.Designer.cs">
+      <DependentUpon>ctrlFooterMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlJabatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlJabatan.Designer.cs">
+      <DependentUpon>ctrlJabatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlOtoRitas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlOtoRitas.Designer.cs">
+      <DependentUpon>ctrlOtoRitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlPejabat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlPejabat.Designer.cs">
+      <DependentUpon>ctrlPejabat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSPJUP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSPJUP.Designer.cs">
+      <DependentUpon>ctrlSPJUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlStatusPengguna.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlStatusPengguna.Designer.cs">
+      <DependentUpon>ctrlStatusPengguna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSubKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSubKegiatan.Designer.cs">
+      <DependentUpon>ctrlSubKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlTahapRBA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTahapRBA.Designer.cs">
+      <DependentUpon>ctrlTahapRBA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Akuntansi\Realisasi04AK.cs" />
+    <Compile Include="Model\Akuntansi\SaldoAwalRek.cs" />
+    <Compile Include="Model\AnggaranDInkes.cs" />
+    <Compile Include="Model\Anggaran\ProgramKegiatanAnggaran.cs" />
+    <Compile Include="Model\Banks.cs" />
+    <Compile Include="Model\Bendahara\BelanjaLPJUP.cs" />
+    <Compile Include="Model\Bendahara\DaftarBank.cs" />
+    <Compile Include="Model\Bendahara\KartuKendali.cs" />
+    <Compile Include="Model\Bendahara\KodeSetor.cs" />
+    <Compile Include="Model\Bendahara\ParameterCetakSPM.cs" />
+    <Compile Include="Model\Bendahara\PenerimaanPenerimaanPenyetoran.cs" />
+    <Compile Include="Model\Bendahara\RefSetor.cs" />
+    <Compile Include="Model\Bendahara\RegisterSPP.cs" />
+    <Compile Include="BP\Akuntansi\KOR6413Logic.cs" />
+    <Compile Include="BP\Akuntansi\KOR64LOLogic.cs" />
+    <Compile Include="BP\Akuntansi\ProsesJurnalLogic.cs" />
+    <Compile Include="BP\Akuntansi\RealisasiAKLogic.cs" />
+    <Compile Include="BP\AplikasiLogic.cs" />
+    <Compile Include="BP\Bendahara\TBankLogic.cs" />
+    <Compile Include="BP\Bendahara\BASTLogic.cs" />
+    <Compile Include="BP\Bendahara\BatasUPLogic.cs" />
+    <Compile Include="BP\Bendahara\BKULogic.cs" />
+    <Compile Include="BP\Bendahara\KelengkapanSPMLogic.cs" />
+    <Compile Include="BP\Bendahara\KontrakLogic.cs" />
+    <Compile Include="BP\Bendahara\KoreksiLogic.cs" />
+    <Compile Include="BP\Bendahara\LaporanBendaharaLogic.cs" />
+    <Compile Include="BP\Bendahara\PengeluaranLogic.cs" />
+    <Compile Include="BP\Bendahara\PotonganLogic.cs" />
+    <Compile Include="BP\Bendahara\PotonganPanjarLogic.cs" />
+    <Compile Include="BP\Bendahara\PotonganSPPLogic.cs" />
+    <Compile Include="BP\Bendahara\RedaksiSPPLogic.cs" />
+    <Compile Include="BP\Bendahara\SetorLogic.cs" />
+    <Compile Include="BP\Bendahara\SKRSKPDLogic.cs" />
+    <Compile Include="BP\Bendahara\SPJLogic.cs" />
+    <Compile Include="BP\Bendahara\STSLogic.cs" />
+    <Compile Include="BP\Bendahara\SubSumberDanaLogic.cs" />
+    <Compile Include="BP\Bendahara\TrxBankLogic.cs" />
+    <Compile Include="BP\BidangPembangunanNasionalLogic.cs" />
+    <Compile Include="BP\BP.cs" />
+    <Compile Include="BP\BulanLogic.cs" />
+    <Compile Include="BP\CatatanKegiatanLogic.cs" />
+    <Compile Include="BP\DasarHukumLogic.cs" />
+    <Compile Include="BP\DefaultSystemLogic.cs" />
+    <Compile Include="BP\DesaLogic.cs" />
+    <Compile Include="BP\DinasLogic.cs" />
+    <Compile Include="BP\DusunLogic.cs" />
+    <Compile Include="BP\GroupLogic.cs" />
+    <Compile Include="BP\ImportRKABapeda.cs" />
+    <Compile Include="BP\IndikatorLogic.cs" />
+    <Compile Include="BP\PaguSKPDLogic.cs" />
+    <Compile Include="BP\PerusahaanLogic.cs" />
+    <Compile Include="BP\RealisasiLogic.cs" />
+    <Compile Include="BP\RekapKUALogic.cs" />
+    <Compile Include="BP\RemoteConnectionLogic.cs" />
+    <Compile Include="BP\RenstraKegiatanLogic.cs" />
+    <Compile Include="BP\RPJMDIndikatorTujuanLogic.cs" />
+    <Compile Include="BP\RPJMDIsuStrategisLogic.cs" />
+    <Compile Include="BP\RPJMDIsuStrategisDanPermasalahanLogic.cs" />
+    <Compile Include="BP\JenisAnggaranLogic.cs" />
+    <Compile Include="BP\KasdaLogic.cs" />
+    <Compile Include="BP\KategoriBaruLogic.cs" />
+    <Compile Include="BP\KecamatanLogic.cs" />
+    <Compile Include="BP\KegiatanLogic.cs" />
+    <Compile Include="BP\KegiatanMusrenmbangLogic.cs" />
+    <Compile Include="BP\KUAHistoryLogic.cs" />
+    <Compile Include="BP\KUALogic.cs" />
+    <Compile Include="BP\MapUrusanBaruLogic.cs" />
+    <Compile Include="BP\MasterKegiatanLogic.cs" />
+    <Compile Include="BP\MasterProgramLogic.cs" />
+    <Compile Include="BP\MTahapanAnggaranLogic.cs" />
+    <Compile Include="BP\MusrenmbangLogic.cs" />
+    <Compile Include="BP\PejebatLogic.cs" />
+    <Compile Include="BP\PelaksanaUrusanLogic.cs" />
+    <Compile Include="BP\PemdaLogic.cs" />
+    <Compile Include="BP\PenggunaDinasLogic.cs" />
+    <Compile Include="BP\PenggunaLogic.cs" />
+    <Compile Include="BP\PerbandinganPlafonKegiatanLogic.cs" />
+    <Compile Include="BP\PerdaDAL.cs" />
+    <Compile Include="BP\PerdaLogic.cs" />
+    <Compile Include="BP\RPJMDMisiLogic.cs" />
+    <Compile Include="BP\RPJMDPermasalahanPembangunanLogic.cs" />
+    <Compile Include="BP\Permen93PerkiraanLogic.cs" />
+    <Compile Include="BP\PK04_01Logic.cs" />
+    <Compile Include="BP\PlafonByUrusanLogic.cs" />
+    <Compile Include="BP\PrioritasNasionalLogic.cs" />
+    <Compile Include="BP\ProfileProgramKegiatanLogic.cs" />
+    <Compile Include="BP\ProfileRekeningLogic.cs" />
+    <Compile Include="BP\ProfileReportPerdaDAL.cs" />
+    <Compile Include="BP\RPJMDProfileRPJMDLogic.cs" />
+    <Compile Include="BP\ProgramLogic.cs" />
+    <Compile Include="BP\ProgramMusrenmbangLogic.cs" />
+    <Compile Include="BP\RegisterSPDLogic.cs" />
+    <Compile Include="BP\RekapLogic.cs" />
+    <Compile Include="BP\RekeningLogic.cs" />
+    <Compile Include="BP\RenjcaLogic.cs" />
+    <Compile Include="BP\RevisiLogic.cs" />
+    <Compile Include="BP\RPJMDProgramLogic.cs" />
+    <Compile Include="BP\RPJMDSasaranLogic.cs" />
+    <Compile Include="BP\RPJMDTujuanLogic.cs" />
+    <Compile Include="BP\rptKUALogic.cs" />
+    <Compile Include="BP\rptPerdaRealisasiLogic.cs" />
+    <Compile Include="BP\rptRKALogic.cs" />
+    <Compile Include="BP\SampleDAL.cs" />
+    <Compile Include="BP\SatuanLogic.cs" />
+    <Compile Include="BP\SessionInputRKALogic.cs" />
+    <Compile Include="BP\SingkronisasiLogic.cs" />
+    <Compile Include="BP\SIRUPLogic.cs" />
+    <Compile Include="BP\SKPDLogic.cs" />
+    <Compile Include="BP\SPDLogic.cs" />
+    <Compile Include="BP\Bendahara\SPPLogic.cs" />
+    <Compile Include="BP\StandardBiayaLogic.cs" />
+    <Compile Include="BP\StatusLogic.cs" />
+    <Compile Include="BP\SubKegiatanLogic.cs" />
+    <Compile Include="BP\SumberDanaLogic.cs" />
+    <Compile Include="BP\TahapanAnggaranLogic.cs" />
+    <Compile Include="BP\TimAnggaranLogic.cs" />
+    <Compile Include="BP\TahapKUALogic.cs" />
+    <Compile Include="BP\TAnggaranRekeningLogic.cs" />
+    <Compile Include="BP\TAnggaranUraianLogic.cs" />
+    <Compile Include="BP\TKegiatanAPBDLogic.cs" />
+    <Compile Include="BP\TPrioritasNasionalLogic.cs" />
+    <Compile Include="BP\TProgramAPBDLogic.cs" />
+    <Compile Include="BP\TProgramLogic.cs" />
+    <Compile Include="BP\TSubKegiatanLogic.cs" />
+    <Compile Include="BP\TSumberDanaLogic.cs" />
+    <Compile Include="BP\UnitKerjaLogic.cs" />
+    <Compile Include="BP\UrusanBaruLogic.cs" />
+    <Compile Include="BP\UrusanDinasLogic.cs" />
+    <Compile Include="BP\UrusanLogic.cs" />
+    <Compile Include="BP\UserFungsiLogic.cs" />
+    <Compile Include="BP\UserGroupLogic.cs" />
+    <Compile Include="BP\VisiLogic.cs" />
+    <Compile Include="CirclePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsTanggal.cs" />
+    <Compile Include="ctrKodelStandardHarga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrKodelStandardHarga.Designer.cs">
+      <DependentUpon>ctrKodelStandardHarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlBendahara.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlBendahara.Designer.cs">
+      <DependentUpon>ctrlBendahara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlBulan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlBulan.Designer.cs">
+      <DependentUpon>ctrlBulan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisSPP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bendahara\ctrlJenisSPP.Designer.cs">
+      <DependentUpon>ctrlJenisSPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlKategoriBaru.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlKategoriBaru.Designer.cs">
+      <DependentUpon>ctrlKategoriBaru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlKegiatan.Designer.cs">
+      <DependentUpon>ctrlKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlKegiatanAPBD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlKegiatanAPBD.Designer.cs">
+      <DependentUpon>ctrlKegiatanAPBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlKodeRekening.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlKodeRekening.Designer.cs">
+      <DependentUpon>ctrlKodeRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlKodeRekeningTerpisah.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlKodeRekeningTerpisah.Designer.cs">
+      <DependentUpon>ctrlKodeRekeningTerpisah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlMasterKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlMasterKegiatan.Designer.cs">
+      <DependentUpon>ctrlMasterKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlMisi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlMisi.Designer.cs">
+      <DependentUpon>ctrlMisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlMPrioritas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlMPrioritas.Designer.cs">
+      <DependentUpon>ctrlMPrioritas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlPotongan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlPotongan.designer.cs">
+      <DependentUpon>ctrlPotongan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlProfileRekening.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlProfileRekening.Designer.cs">
+      <DependentUpon>ctrlProfileRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlProgramKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlProgramKegiatan.Designer.cs">
+      <DependentUpon>ctrlProgramKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlRekeningKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlRekeningKegiatan.Designer.cs">
+      <DependentUpon>ctrlRekeningKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlRPJMDTujuan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlRPJMDTujuan.Designer.cs">
+      <DependentUpon>ctrlRPJMDTujuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSatuan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSatuan.Designer.cs">
+      <DependentUpon>ctrlSatuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSessionRKA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSessionRKA.Designer.cs">
+      <DependentUpon>ctrlSessionRKA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSPD.Designer.cs">
+      <DependentUpon>ctrlSPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlStandardHarga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlStandardHarga.Designer.cs">
+      <DependentUpon>ctrlStandardHarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSumberDana.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSumberDana.Designer.cs">
+      <DependentUpon>ctrlSumberDana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlTanggal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTanggal.Designer.cs">
+      <DependentUpon>ctrlTanggal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlTriwulan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlTriwulan.Designer.cs">
+      <DependentUpon>ctrlTriwulan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlUrusanBaru.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlUrusanBaru.Designer.cs">
+      <DependentUpon>ctrlUrusanBaru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlVia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlVia.designer.cs">
+      <DependentUpon>ctrlVia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlWaktu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlWaktu.Designer.cs">
+      <DependentUpon>ctrlWaktu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Akuntansi\Jurnal.cs" />
+    <Compile Include="Model\Akuntansi\KOR6413.cs" />
+    <Compile Include="Model\Akuntansi\Laporan.cs" />
+    <Compile Include="Model\ArahKebijakanTahunan.cs" />
+    <Compile Include="Model\Bendahara\RincianObjek.cs" />
+    <Compile Include="Model\Bendahara\SPJPenerimaan.cs" />
+    <Compile Include="Model\Bendahara\SPJRekening.cs" />
+    <Compile Include="Model\Bendahara\TBank.cs" />
+    <Compile Include="Model\Bendahara\BAST.cs" />
+    <Compile Include="Model\Bendahara\BatasUP.cs" />
+    <Compile Include="Model\Bendahara\BKU.cs" />
+    <Compile Include="Model\Bendahara\KelengkapanSPM.cs" />
+    <Compile Include="Model\Bendahara\Kontrak.cs" />
+    <Compile Include="Model\Bendahara\Koreksi.cs" />
+    <Compile Include="Model\Bendahara\LaporanBendahara..cs" />
+    <Compile Include="Model\Bendahara\Pajak.cs" />
+    <Compile Include="Model\Bendahara\Pengeluaran.cs" />
+    <Compile Include="Model\Bendahara\Potongan.cs" />
+    <Compile Include="Model\Bendahara\PotonganPanjar.cs" />
+    <Compile Include="Model\Bendahara\PotonganSPP.cs" />
+    <Compile Include="Model\Bendahara\PotonganTransaksi.cs" />
+    <Compile Include="Model\Bendahara\RedaksiSPP.cs" />
+    <Compile Include="Model\Bendahara\RekeningDetail.cs" />
+    <Compile Include="Model\Bendahara\RingkasanBelanja.cs" />
+    <Compile Include="Model\Bendahara\Setor.cs" />
+    <Compile Include="Model\Bendahara\SKRSKPD.cs" />
+    <Compile Include="Model\Bendahara\Fungsional.cs" />
+    <Compile Include="Model\Bendahara\SPJ.cs" />
+    <Compile Include="Model\Bendahara\SPP.cs" />
+    <Compile Include="Model\Bendahara\SPPRekening.cs" />
+    <Compile Include="Model\Bendahara\STS.cs" />
+    <Compile Include="Model\Bendahara\SubSumberDana.cs" />
+    <Compile Include="Model\Bendahara\TransaksiBank.cs" />
+    <Compile Include="Model\Bendahara\TrxBank.cs" />
+    <Compile Include="Model\BidangPembangunanNasional.cs" />
+    <Compile Include="Model\CekInpuPagu.cs" />
+    <Compile Include="Model\CetakPPAS.cs" />
+    <Compile Include="Model\clsPerbandinganKUAPlafon.cs" />
+    <Compile Include="Model\Bendahara\ParameterBendahara.cs" />
+    <Compile Include="Model\cOtoritas.cs" />
+    <Compile Include="Model\Creator.cs" />
+    <Compile Include="Model\DisplaySPD.cs" />
+    <Compile Include="Model\KodeDinasLama.cs" />
+    <Compile Include="Model\KodeurusanLama.cs" />
+    <Compile Include="Model\Laporan\Laporan.cs" />
+    <Compile Include="Model\Otoritas.cs" />
+    <Compile Include="Model\PerdaRealisasi1_1.cs" />
+    <Compile Include="Model\PerdaRealisasi_I.cs" />
+    <Compile Include="Model\PERDAVII90.cs" />
+    <Compile Include="Model\PERDAVIII90.cs" />
+    <Compile Include="Model\KORBELANJABARANG.cs" />
+    <Compile Include="Model\LampViPerda90.cs" />
+    <Compile Include="Model\ListSubKegiatanRPT.cs" />
+    <Compile Include="Model\PaguSKPD.cs" />
+    <Compile Include="Model\PerdaVI50.cs" />
+    <Compile Include="Model\Periode.cs" />
+    <Compile Include="Model\Perusahaan.cs" />
+    <Compile Include="Model\PPTK.cs" />
+    <Compile Include="Model\ProgramKegiatan.cs" />
+    <Compile Include="Model\ProgramKegiatanLama.cs" />
+    <Compile Include="Model\RBA.cs" />
+    <Compile Include="Model\Realisasi.cs" />
+    <Compile Include="Model\REKAPKUA.cs" />
+    <Compile Include="Model\RemoteConnection.cs" />
+    <Compile Include="Model\RENSTRAKegiatan.cs" />
+    <Compile Include="Model\RENSTRAProgram.cs" />
+    <Compile Include="Model\RenstraSubKegiatan.cs" />
+    <Compile Include="Model\RKBMD.cs" />
+    <Compile Include="Model\RKPDKUA.cs" />
+    <Compile Include="Model\RPJMDIndikatorTujuan.cs" />
+    <Compile Include="Model\RPJMDIsuStrategis.cs" />
+    <Compile Include="Model\RPJMDIsuStrategisDanPermasalahan.cs" />
+    <Compile Include="Model\LokasiDiRKA.cs" />
+    <Compile Include="Model\RPJMDMisi.cs" />
+    <Compile Include="Model\RPJMDPermasalahanPembangunan.cs" />
+    <Compile Include="Model\RPJMDProfileRPJMD.cs" />
+    <Compile Include="Model\RJPMDTujuan.cs" />
+    <Compile Include="Model\RPJMDProgram.cs" />
+    <Compile Include="Model\RPJMDSasaran.cs" />
+    <Compile Include="Model\RPJMDTujuan.cs" />
+    <Compile Include="Model\Sasaran.cs" />
+    <Compile Include="Model\SasaranIndikator.cs" />
+    <Compile Include="Model\Satuan.cs" />
+    <Compile Include="Model\SessionInputRKA.cs" />
+    <Compile Include="Model\Singkronisasi.cs" />
+    <Compile Include="Model\SIPD\Belanja.cs" />
+    <Compile Include="Model\SIPD\BelanjaRinci.cs" />
+    <Compile Include="Model\SIRUP.cs" />
+    <Compile Include="Model\SP2DOnLine\511\DataInformasi511Response.cs" />
+    <Compile Include="Model\SP2DOnLine\CallBack\CallBackRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\Common\DataPenerima.cs" />
+    <Compile Include="Model\SP2DOnLine\Common\DataPengirim.cs" />
+    <Compile Include="Model\SP2DOnLine\Common\DetailPotonganMpn.cs" />
+    <Compile Include="Model\SP2DOnLine\Common\DetailPotonganNonMpn.cs" />
+    <Compile Include="Model\SP2DOnLine\CreateIdBillingRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\DataCreateIdBillingResponse.cs" />
+    <Compile Include="Model\SP2DOnLine\DataGenerateReportResponseEx.cs" />
+    <Compile Include="Model\SP2DOnLine\DataInformasi511Response.cs" />
+    <Compile Include="Model\SP2DOnLine\DataInquiriesNPWPResponse.cs" />
+    <Compile Include="Model\SP2DOnLine\DataInquiryPaymentMPNResponse.cs" />
+    <Compile Include="Model\SP2DOnLine\DataOPTLogic.cs" />
+    <Compile Include="Model\SP2DOnLine\DataOTP.cs" />
+    <Compile Include="Model\SP2DOnLine\DetailTransaksiSP2DOnline57\DetailTransaksi57Request.cs" />
+    <Compile Include="Model\SP2DOnLine\GenerateOTPRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\GenerateReportRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\InquiryNPWPRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\InquiryPaymentMPNRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\InquiryRekeningRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\InquiryRequest.cs" />
+    <Compile Include="Model\SP2DOnLine\KesalahanSP2DOnline.cs" />
+    <Compile Include="Model\SP2DOnLine\SP2DOnLineLog.cs" />
+    <Compile Include="Model\SP2DOnLine\TransaksiSP2DOnline510Response.cs" />
+    <Compile Include="Model\SPJ.cs" />
+    <Compile Include="Model\SPPRekenings.cs" />
+    <Compile Include="Model\Status.cs" />
+    <Compile Include="Model\SubKegiatan.cs" />
+    <Compile Include="Model\TahapRBA.cs" />
+    <Compile Include="Model\Visi.cs" />
+    <Compile Include="DataAccess\Configuration.cs" />
+    <Compile Include="DataAccess\Configurations\ApplicationConfiguration.cs" />
+    <Compile Include="DataAccess\DBHelper.cs" />
+    <Compile Include="DataAccess\Properties\AssemblyInfo.cs" />
+    <Compile Include="DataGridViewBarGraphCell.cs" />
+    <Compile Include="DataGridViewBarGraphColumn.cs" />
+    <Compile Include="DESEncrypt.cs" />
+    <Compile Include="Excelutlity.cs" />
+    <Compile Include="External\frmSinergi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="External\frmSinergi.Designer.cs">
+      <DependentUpon>frmSinergi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formatting\Rupiah.cs" />
+    <Compile Include="frmAnggaranKasRekap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnggaranKasRekap.Designer.cs">
+      <DependentUpon>frmAnggaranKasRekap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmApplicationProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmApplicationProfile.Designer.cs">
+      <DependentUpon>frmApplicationProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuatPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuatPassword.Designer.cs">
+      <DependentUpon>frmBuatPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCariRekening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCariRekening.Designer.cs">
+      <DependentUpon>frmCariRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCekDPAPlafon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCekDPAPlafon.Designer.cs">
+      <DependentUpon>frmCekDPAPlafon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCulture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCulture.Designer.cs">
+      <DependentUpon>frmCulture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInputKodeRekening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputKodeRekening.Designer.cs">
+      <DependentUpon>frmInputKodeRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInputSUmberDanaKegiatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputSUmberDanaKegiatan.Designer.cs">
+      <DependentUpon>frmInputSUmberDanaKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AnggaranKas.cs" />
+    <Compile Include="Model\AnggaranKasTW.cs" />
+    <Compile Include="Model\Bulan.cs" />
+    <Compile Include="Model\clsJenisJabatan.cs" />
+    <Compile Include="Model\DasarHukum.cs" />
+    <Compile Include="Model\DashboardIII.cs" />
+    <Compile Include="Model\DinasLama.cs" />
+    <Compile Include="Model\DPA22.cs" />
+    <Compile Include="Model\Group.cs" />
+    <Compile Include="Model\JenisAnggaran.cs" />
+    <Compile Include="Model\Jumlah.cs" />
+    <Compile Include="Model\Kasda.cs" />
+    <Compile Include="Model\KategoriBaru.cs" />
+    <Compile Include="Model\KeteranganSPD.cs" />
+    <Compile Include="Model\MappingDinasBaru.cs" />
+    <Compile Include="Model\MappingUrusanBaruLama.cs" />
+    <Compile Include="Model\MapUrusanUrusanBaru.cs" />
+    <Compile Include="Model\MTahapanAnggaran.cs" />
+    <Compile Include="Model\Pejabat.cs" />
+    <Compile Include="Model\Penjabaran.cs" />
+    <Compile Include="Model\PerbandinganPlafonKegiatan.cs" />
+    <Compile Include="Model\Perda.cs" />
+    <Compile Include="Model\Perda11.cs" />
+    <Compile Include="Model\PerdaIIDB.cs" />
+    <Compile Include="Model\PerdaIII.cs" />
+    <Compile Include="Model\PerdaIV.cs" />
+    <Compile Include="Model\PerdaV.cs" />
+    <Compile Include="Model\PMK04_01.cs" />
+    <Compile Include="Model\PMK04_II.cs" />
+    <Compile Include="Model\PMK04_IIPerJenisBelanja.cs" />
+    <Compile Include="Model\PosisiAnggaranKas.cs" />
+    <Compile Include="Model\PrioritasNasional.cs" />
+    <Compile Include="Model\ProfileProgramKegiatan.cs" />
+    <Compile Include="Model\ProfileRekening.cs" />
+    <Compile Include="Model\ProfileReportPerda.cs" />
+    <Compile Include="Model\RegisterSPD.cs" />
+    <Compile Include="Model\RekapAnggaran.cs" />
+    <Compile Include="Model\RekapAnggaranKas.cs" />
+    <Compile Include="Model\RekapDashBoard.cs" />
+    <Compile Include="Model\RekapPerJenis.cs" />
+    <Compile Include="Model\RekapProgramKegiatanUmum.cs" />
+    <Compile Include="Model\Renja.cs" />
+    <Compile Include="Model\RingkasanPerda.cs" />
+    <Compile Include="Model\RKA22Murni.cs" />
+    <Compile Include="Model\RptPerdaParameter.cs" />
+    <Compile Include="Model\PerdaII.cs" />
+    <Compile Include="Model\rptPerda_IV.cs" />
+    <Compile Include="Model\DTORPTSPD.cs" />
+    <Compile Include="Model\SecondConnection.cs" />
+    <Compile Include="Model\SPD.cs" />
+    <Compile Include="Model\SPDDetail.cs" />
+    <Compile Include="Model\SPDKegiatan.cs" />
+    <Compile Include="Model\StandardBiaya.cs" />
+    <Compile Include="Model\SumberDana.cs" />
+    <Compile Include="Model\TahapanAnggaran.cs" />
+    <Compile Include="Model\TEMPJumlahUraian.cs" />
+    <Compile Include="Model\TimAnggaran.cs" />
+    <Compile Include="Model\TPrioritasNasional.cs" />
+    <Compile Include="Model\TProgramAPBD.cs" />
+    <Compile Include="Model\TriwulanDPAAnggaranKas.cs" />
+    <Compile Include="Model\TSubKegiatan.cs" />
+    <Compile Include="Model\TSumberDana.cs" />
+    <Compile Include="Model\UrusanBaru.cs" />
+    <Compile Include="ExceptionReport.cs" />
+    <Compile Include="Formatting\CommonExt.cs" />
+    <Compile Include="Formatting\DateFormat.cs" />
+    <Compile Include="frmADK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmADK.Designer.cs">
+      <DependentUpon>frmADK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnggaranKas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnggaranKas.Designer.cs">
+      <DependentUpon>frmAnggaranKas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCekInputAnggaranKas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCekInputAnggaranKas.Designer.cs">
+      <DependentUpon>frmCekInputAnggaranKas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDasarHukum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDasarHukum.Designer.cs">
+      <DependentUpon>frmDasarHukum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashBoard.Designer.cs">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDPA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDPA.designer.cs">
+      <DependentUpon>frmDPA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDPAPenyempurnaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDPAPenyempurnaan.Designer.cs">
+      <DependentUpon>frmDPAPenyempurnaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportAPBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportAPBD.Designer.cs">
+      <DependentUpon>frmImportAPBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIputTimTAPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIputTimTAPD.Designer.cs">
+      <DependentUpon>frmIputTimTAPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInputPlafonPerRekening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputPlafonPerRekening.Designer.cs">
+      <DependentUpon>frmInputPlafonPerRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKategoriBaru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKategoriBaru.Designer.cs">
+      <DependentUpon>frmKategoriBaru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKoneksiPerencanaan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKoneksiPerencanaan.Designer.cs">
+      <DependentUpon>frmKoneksiPerencanaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKUAPPASTerintegrasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKUAPPASTerintegrasi.Designer.cs">
+      <DependentUpon>frmKUAPPASTerintegrasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListPejabat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListPejabat.Designer.cs">
+      <DependentUpon>frmListPejabat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoginBaru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoginBaru.Designer.cs">
+      <DependentUpon>frmLoginBaru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMappingRekening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMappingRekening.Designer.cs">
+      <DependentUpon>frmMappingRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMappingSKPDUrusanBaru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMappingSKPDUrusanBaru.Designer.cs">
+      <DependentUpon>frmMappingSKPDUrusanBaru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMappingUrusan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMappingUrusan.Designer.cs">
+      <DependentUpon>frmMappingUrusan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapUrusanBaru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapUrusanBaru.Designer.cs">
+      <DependentUpon>frmMapUrusanBaru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMapUrusanBAruProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMapUrusanBAruProgram.Designer.cs">
+      <DependentUpon>frmMapUrusanBAruProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterPrioritas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterPrioritas.Designer.cs">
+      <DependentUpon>frmMasterPrioritas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterSumberDana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterSumberDana.Designer.cs">
+      <DependentUpon>frmMasterSumberDana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessage.Designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPDFView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPDFView.Designer.cs">
+      <DependentUpon>frmPDFView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPejabatDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPejabatDetail.Designer.cs">
+      <DependentUpon>frmPejabatDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPenggunaRinci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPenggunaRinci.Designer.cs">
+      <DependentUpon>frmPenggunaRinci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPenjabaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPenjabaran.Designer.cs">
+      <DependentUpon>frmPenjabaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPerbaikiKodeProgramKegiatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerbaikiKodeProgramKegiatan.Designer.cs">
+      <DependentUpon>frmPerbaikiKodeProgramKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterSPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegisterSPD.Designer.cs">
+      <DependentUpon>frmRegisterSPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRekapBelanjaLangsung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRekapBelanjaLangsung.Designer.cs">
+      <DependentUpon>frmRekapBelanjaLangsung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRekapKUAPPAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRekapKUAPPAS.Designer.cs">
+      <DependentUpon>frmRekapKUAPPAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRekening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRekening.Designer.cs">
+      <DependentUpon>frmRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRekening90.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRekening90.designer.cs">
+      <DependentUpon>frmRekening90.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetStatusInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetStatusInput.Designer.cs">
+      <DependentUpon>frmSetStatusInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingProfileRekening.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingProfileRekening.Designer.cs">
+      <DependentUpon>frmSettingProfileRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSP2DOnlineMasukkanOTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSP2DOnlineMasukkanOTP.Designer.cs">
+      <DependentUpon>frmSP2DOnlineMasukkanOTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatus.Designer.cs">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSumberDana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSumberDana.Designer.cs">
+      <DependentUpon>frmSumberDana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestPDF.Designer.cs">
+      <DependentUpon>frmTestPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrusanDinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrusanDinas.Designer.cs">
+      <DependentUpon>frmUrusanDinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserGroup.Designer.cs">
+      <DependentUpon>frmUserGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSP2DOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSP2DOnline.Designer.cs">
+      <DependentUpon>frmSP2DOnline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSP2DOnlineDaftarBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSP2DOnlineDaftarBank.Designer.cs">
+      <DependentUpon>frmSP2DOnlineDaftarBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="HMergedCell.cs" />
+    <Compile Include="InternetAvailability.cs" />
+    <Compile Include="KasDaerah\frmCatatTanggalCair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KasDaerah\frmCatatTanggalCair.Designer.cs">
+      <DependentUpon>frmCatatTanggalCair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XLaporan.cs" />
+    <Compile Include="M3encryption.cs" />
+    <Compile Include="frmMainBaru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainBaru.Designer.cs">
+      <DependentUpon>frmMainBaru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordUtility.cs" />
+    <Compile Include="pdfViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pdfViewer.Designer.cs">
+      <DependentUpon>pdfViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compressor.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="ctrlDesa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlDesa.Designer.cs">
+      <DependentUpon>ctrlDesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlDinas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlDinas.Designer.cs">
+      <DependentUpon>ctrlDinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlDusun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlDusun.Designer.cs">
+      <DependentUpon>ctrlDusun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlHeader.Designer.cs">
+      <DependentUpon>ctrlHeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlHeaderMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlHeaderMain.Designer.cs">
+      <DependentUpon>ctrlHeaderMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlJenisAnggaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlJenisAnggaran.Designer.cs">
+      <DependentUpon>ctrlJenisAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlKecamatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlKecamatan.Designer.cs">
+      <DependentUpon>ctrlKecamatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlMasterProgram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlMasterProgram.Designer.cs">
+      <DependentUpon>ctrlMasterProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlNavigation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlNavigation.Designer.cs">
+      <DependentUpon>ctrlNavigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlProgramMusrenmbang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlProgramMusrenmbang.Designer.cs">
+      <DependentUpon>ctrlProgramMusrenmbang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlUnitKerja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlUnitKerja.Designer.cs">
+      <DependentUpon>ctrlUnitKerja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlUrusan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlUrusan.Designer.cs">
+      <DependentUpon>ctrlUrusan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlSKPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlSKPD.Designer.cs">
+      <DependentUpon>ctrlSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlUrusanPemerintahan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlUrusanPemerintahan.Designer.cs">
+      <DependentUpon>ctrlUrusanPemerintahan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\AssemblyProvider.cs" />
+    <Compile Include="DataAccess\Class1.cs" />
+    <Compile Include="DataAccess\CommandBuilder.cs" />
+    <Compile Include="DataAccess\Common.cs" />
+    <Compile Include="DataAccess\ConnectionManager.cs" />
+    <Compile Include="DataAccess\DataAdapterManager.cs" />
+    <Compile Include="DataAccess\DBParamBuilder.cs" />
+    <Compile Include="DataAccess\DBParameter.cs" />
+    <Compile Include="DataAccess\DBParameterCollection.cs" />
+    <Compile Include="DataAccess\Ini.cs" />
+    <Compile Include="Model\CatatanKegiatan.cs" />
+    <Compile Include="Model\Indikator.cs" />
+    <Compile Include="Model\ParameterAnggaran.cs" />
+    <Compile Include="Model\ParameterLaporan.cs" />
+    <Compile Include="Model\RPTRKA.cs" />
+    <Compile Include="Model\TAnggaranRekening.cs" />
+    <Compile Include="Model\Aplikasi.cs" />
+    <Compile Include="Model\Barang.cs" />
+    <Compile Include="Model\Bidang.cs" />
+    <Compile Include="Model\DefaultSystem.cs" />
+    <Compile Include="Model\Desa.cs" />
+    <Compile Include="Model\Dictionary.cs" />
+    <Compile Include="Model\Dinas.cs" />
+    <Compile Include="Model\Dusun.cs" />
+    <Compile Include="Model\GroupFungsi.cs" />
+    <Compile Include="Model\Kecamatan.cs" />
+    <Compile Include="Model\Kegiatan.cs" />
+    <Compile Include="Model\KegiatanMusrenmbang.cs" />
+    <Compile Include="Model\KUA.cs" />
+    <Compile Include="Model\KUAHistory.cs" />
+    <Compile Include="Model\MasterKegiatan.cs" />
+    <Compile Include="Model\MasterProgram.cs" />
+    <Compile Include="Model\Musrenmbang.cs" />
+    <Compile Include="Model\PelaksanaUrusan.cs" />
+    <Compile Include="Model\Pemda.cs" />
+    <Compile Include="Model\Pengguna.cs" />
+    <Compile Include="Model\PenggunaDinas.cs" />
+    <Compile Include="Model\PenggunaOtoritas.cs" />
+    <Compile Include="Model\PlafonByUrusan.cs" />
+    <Compile Include="Model\ProgramMusrenmbang.cs" />
+    <Compile Include="Model\Programs.cs" />
+    <Compile Include="Model\Rekening.cs" />
+    <Compile Include="Model\RKPD.cs" />
+    <Compile Include="Model\rptKUA.cs" />
+    <Compile Include="Model\SKPD.cs" />
+    <Compile Include="Model\SubUnit.cs" />
+    <Compile Include="Model\SysteDefault.cs" />
+    <Compile Include="Model\TahapKUA.cs" />
+    <Compile Include="Model\TAnggaranUraian.cs" />
+    <Compile Include="Model\TKegiatan.cs" />
+    <Compile Include="Model\TKegiatanAPBD.cs" />
+    <Compile Include="Model\TPrograms.cs" />
+    <Compile Include="Model\TRincian.cs" />
+    <Compile Include="Model\Unit.cs" />
+    <Compile Include="Model\Urusan.cs" />
+    <Compile Include="Model\UrusanDinas.cs" />
+    <Compile Include="Model\UserFungsi.cs" />
+    <Compile Include="Model\UserGroup.cs" />
+    <Compile Include="EventResponseMessage.cs" />
+    <Compile Include="frmDesaDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesaDetail.Designer.cs">
+      <DependentUpon>frmDesaDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDusunDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDusunDetail.Designer.cs">
+      <DependentUpon>frmDusunDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKecamatanDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKecamatanDetail.Designer.cs">
+      <DependentUpon>frmKecamatanDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListDesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListDesa.Designer.cs">
+      <DependentUpon>frmListDesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListDinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListDinas.Designer.cs">
+      <DependentUpon>frmListDinas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formatting\DataFormat.cs" />
+    <Compile Include="frmKecamatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKecamatan.Designer.cs">
+      <DependentUpon>frmKecamatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListDusun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListDusun.Designer.cs">
+      <DependentUpon>frmListDusun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListUK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListUK.Designer.cs">
+      <DependentUpon>frmListUK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMasterProgramDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasterProgramDetail.Designer.cs">
+      <DependentUpon>frmMasterProgramDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPengguna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPengguna.Designer.cs">
+      <DependentUpon>frmPengguna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRekap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRekap.Designer.cs">
+      <DependentUpon>frmRekap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingPemda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingPemda.Designer.cs">
+      <DependentUpon>frmSettingPemda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSKPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSKPD.Designer.cs">
+      <DependentUpon>frmSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUK.Designer.cs">
+      <DependentUpon>frmUK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUrusanPemerintahan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUrusanPemerintahan.Designer.cs">
+      <DependentUpon>frmUrusanPemerintahan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVar.cs" />
+    <Compile Include="GradientColor.cs" />
+    <Compile Include="IAutoUpdater.cs" />
+    <Compile Include="Ini.cs" />
+    <Compile Include="ListItemData.cs" />
+    <Compile Include="LocalFile.cs" />
+    <Compile Include="PasswordHash.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoteFile.cs" />
+    <Compile Include="Rupiah.cs" />
+    <Compile Include="SaltEncrypt.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SideBarAnggaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarAnggaran.Designer.cs">
+      <DependentUpon>SideBarAnggaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIKUATWebRequest.cs" />
+    <Compile Include="SP2DOnline\frmCreateIDBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmCreateIDBilling.Designer.cs">
+      <DependentUpon>frmCreateIDBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmDataCreateIdilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmDataCreateIdilling.Designer.cs">
+      <DependentUpon>frmDataCreateIdilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmDataIDBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmDataIDBilling.Designer.cs">
+      <DependentUpon>frmDataIDBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmDataNPWP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmDataNPWP.Designer.cs">
+      <DependentUpon>frmDataNPWP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmInputOTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmInputOTP.Designer.cs">
+      <DependentUpon>frmInputOTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmMPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmMPN.Designer.cs">
+      <DependentUpon>frmMPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmReportIdBilling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmReportIdBilling.Designer.cs">
+      <DependentUpon>frmReportIdBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmReportSP2DOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmReportSP2DOnline.Designer.cs">
+      <DependentUpon>frmReportSP2DOnline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmRespond511.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmRespond511.Designer.cs">
+      <DependentUpon>frmRespond511.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmRiwayat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmRiwayat.Designer.cs">
+      <DependentUpon>frmRiwayat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\frmSP2DOnlne510Respond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SP2DOnline\frmSP2DOnlne510Respond.Designer.cs">
+      <DependentUpon>frmSP2DOnlne510Respond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP2DOnline\HIMACExtension.cs" />
+    <Compile Include="SP2DOnline\login.cs" />
+    <Compile Include="SP2DOnline\SikuatHMACSHA256.cs" />
+    <Compile Include="SP2DOnline\SP2D%29nlineAPI.cs" />
+    <Compile Include="SP2DOnline\WebRequestExtensions.cs" />
+    <Compile Include="StringCipher.cs" />
+    <Compile Include="TambahRekeningKesehatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahRekeningKesehatan.Designer.cs">
+      <DependentUpon>TambahRekeningKesehatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TanggalTandaTangan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TanggalTandaTangan.Designer.cs">
+      <DependentUpon>TanggalTandaTangan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trace.cs" />
+    <Compile Include="TreeGridCell.cs" />
+    <Compile Include="TreeGridEvents.cs" />
+    <Compile Include="TreeGridNode.cs" />
+    <Compile Include="TreeGridNodeCollection.cs" />
+    <Compile Include="TreeGridView.cs" />
+    <Compile Include="treeMasterProgramKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="treeMasterProgramKegiatan.Designer.cs">
+      <DependentUpon>treeMasterProgramKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeProgramKegiatan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeProgramKegiatan.Designer.cs">
+      <DependentUpon>TreeProgramKegiatan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="treeRekening.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="treeRekening.Designer.cs">
+      <DependentUpon>treeRekening.cs</DependentUpon>
+    </Compile>
+    <Compile Include="treeSKPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="treeSKPD.Designer.cs">
+      <DependentUpon>treeSKPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeStateTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeStateTreeView.Designer.cs">
+      <DependentUpon>TreeStateTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeSumberDana.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeSumberDana.Designer.cs">
+      <DependentUpon>TreeSumberDana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="treeWilayah.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="treeWilayah.Designer.cs">
+      <DependentUpon>treeWilayah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlProgram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlProgram.Designer.cs">
+      <DependentUpon>ctrlProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIExt.cs" />
+    <Compile Include="UpdateFileList.cs" />
+    <Compile Include="Updater\RedCell.Diagnostics.Update\Log.cs" />
+    <Compile Include="Updater\RedCell.Diagnostics.Update\LogEventArgs.cs" />
+    <Compile Include="Updater\RedCell.Diagnostics.Update\Manifest.cs" />
+    <Compile Include="Updater\RedCell.Diagnostics.Update\Updater.cs" />
+    <Compile Include="Updater\RedCell.Net\Fetch.cs" />
+    <Compile Include="Updater\RedCell.Net\FetchStream.cs" />
+    <Compile Include="Utiles.cs" />
+    <EmbeddedResource Include="Akunting\ctrlBukuBesar.resx">
+      <DependentUpon>ctrlBukuBesar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\ctrlDaftarRekeningJurnal.resx">
+      <DependentUpon>ctrlDaftarRekeningJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\ctrlJenisJurnalPenyesuaian.resx">
+      <DependentUpon>ctrlJenisJurnalPenyesuaian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\ctrlJenisSumber.resx">
+      <DependentUpon>ctrlJenisSumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmBukuBesar.resx">
+      <DependentUpon>frmBukuBesar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmBukuBesarDlg.resx">
+      <DependentUpon>frmBukuBesarDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmCetakPerda.resx">
+      <DependentUpon>frmCetakPerda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmInputNeracaAwal.resx">
+      <DependentUpon>frmInputNeracaAwal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmInputRealisasiPerRekening.resx">
+      <DependentUpon>frmInputRealisasiPerRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmJurnal.resx">
+      <DependentUpon>frmJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmJurnalTrx.resx">
+      <DependentUpon>frmJurnalTrx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmLaporanJurnal.resx">
+      <DependentUpon>frmLaporanJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmLaporanLPE.resx">
+      <DependentUpon>frmLaporanLPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmListJurnal.resx">
+      <DependentUpon>frmListJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmLO.resx">
+      <DependentUpon>frmLO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmLRA.resx">
+      <DependentUpon>frmLRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmNeraca.resx">
+      <DependentUpon>frmNeraca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmPerbandingan.resx">
+      <DependentUpon>frmPerbandingan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmPosting.resx">
+      <DependentUpon>frmPosting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmRealisasiPerUrusan.resx">
+      <DependentUpon>frmRealisasiPerUrusan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmRegisterSP2DBPK.resx">
+      <DependentUpon>frmRegisterSP2DBPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmRekap.resx">
+      <DependentUpon>frmRekap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\frmSelisihTrxBB.resx">
+      <DependentUpon>frmSelisihTrxBB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akunting\tabJurnalRekening.resx">
+      <DependentUpon>tabJurnalRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\ctrlProgramKegiatanSub.resx">
+      <DependentUpon>ctrlProgramKegiatanSub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\ctrlTahapAnggaran.resx">
+      <DependentUpon>ctrlTahapAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\frmAnggaran.resx">
+      <DependentUpon>frmAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\frmCekAnggaranKas.resx">
+      <DependentUpon>frmCekAnggaranKas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\frmCekSPJ.resx">
+      <DependentUpon>frmCekSPJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\frmEditAnggaran.resx">
+      <DependentUpon>frmEditAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\frmPilihUnitKerja.resx">
+      <DependentUpon>frmPilihUnitKerja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\gridTreeAnggaran.resx">
+      <DependentUpon>gridTreeAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\treeAnggaran.resx">
+      <DependentUpon>treeAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anggaran\treeStruktuAnggaran.resx">
+      <DependentUpon>treeStruktuAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlAlasanPenolakan.resx">
+      <DependentUpon>ctrlAlasanPenolakan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlBAST.resx">
+      <DependentUpon>ctrlBAST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlJenisGaji.resx">
+      <DependentUpon>ctrlJenisGaji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlNamaFileImportSTS.resx">
+      <DependentUpon>ctrlNamaFileImportSTS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPilihanRekeningAnggaran.resx">
+      <DependentUpon>ctrlPilihanRekeningAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlDaftarBank.resx">
+      <DependentUpon>ctrlDaftarBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlJenisBelanja.resx">
+      <DependentUpon>ctrlJenisBelanja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlJenisBelanjaSPP.resx">
+      <DependentUpon>ctrlJenisBelanjaSPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlJenisPenerimaan.resx">
+      <DependentUpon>ctrlJenisPenerimaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlJenisSKRSKPD.resx">
+      <DependentUpon>ctrlJenisSKRSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlJenisTrxBank.resx">
+      <DependentUpon>ctrlJenisTrxBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlKontrak.resx">
+      <DependentUpon>ctrlKontrak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlCombPotongan.resx">
+      <DependentUpon>ctrlCombPotongan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlListKontrak.resx">
+      <DependentUpon>ctrlListKontrak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPanelPencarian.resx">
+      <DependentUpon>ctrlPanelPencarian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPanjar.resx">
+      <DependentUpon>ctrlPanjar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPenandaTanganSP2D.resx">
+      <DependentUpon>ctrlPenandaTanganSP2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPeriode.resx">
+      <DependentUpon>ctrlPeriode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPerusahaan.resx">
+      <DependentUpon>ctrlPerusahaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPihakKetiga.resx">
+      <DependentUpon>ctrlPihakKetiga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlPilihanPotongan.resx">
+      <DependentUpon>ctrlPilihanPotongan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlSetor.resx">
+      <DependentUpon>ctrlSetor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlSKPDSKPD.resx">
+      <DependentUpon>ctrlSKPDSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlSPP.resx">
+      <DependentUpon>ctrlSPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlSubSumberDana.resx">
+      <DependentUpon>ctrlSubSumberDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlSumberDanaLengkap.resx">
+      <DependentUpon>ctrlSumberDanaLengkap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlTanggalBulan.resx">
+      <DependentUpon>ctrlTanggalBulan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlTanggalBulanVertikal.resx">
+      <DependentUpon>ctrlTanggalBulanVertikal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmBank.resx">
+      <DependentUpon>frmBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmbataUP.resx">
+      <DependentUpon>frmbataUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmBukuKas.resx">
+      <DependentUpon>frmBukuKas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmCariKontrak.resx">
+      <DependentUpon>frmCariKontrak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmCekBKU.resx">
+      <DependentUpon>frmCekBKU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmCekPajakDanPenyetorannya.resx">
+      <DependentUpon>frmCekPajakDanPenyetorannya.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmDashBoardBendahara.resx">
+      <DependentUpon>frmDashBoardBendahara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmImportPendapatan.resx">
+      <DependentUpon>frmImportPendapatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListPenyetoranKasda.resx">
+      <DependentUpon>frmListPenyetoranKasda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListTerimaSTSKasda.resx">
+      <DependentUpon>frmListTerimaSTSKasda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmLPJTU.resx">
+      <DependentUpon>frmLPJTU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmLRAAnngaranKas.resx">
+      <DependentUpon>frmLRAAnngaranKas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPajak2.resx">
+      <DependentUpon>frmPajak2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPajakDanSetorannya.resx">
+      <DependentUpon>frmPajakDanSetorannya.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPelimpahanSubKegiatanKeUK.resx">
+      <DependentUpon>frmPelimpahanSubKegiatanKeUK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPenerimaanSPM.resx">
+      <DependentUpon>frmPenerimaanSPM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPengeluaranBukuRincianObjerk.resx">
+      <DependentUpon>frmPengeluaranBukuRincianObjerk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPengeluaranLapKartuKendali.resx">
+      <DependentUpon>frmPengeluaranLapKartuKendali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmKoreksi.resx">
+      <DependentUpon>frmKoreksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPenerimaanPenerimaandanPenyetoran.resx">
+      <DependentUpon>frmPenerimaanPenerimaandanPenyetoran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPengeluaranLaporanPenutupanKas.resx">
+      <DependentUpon>frmPengeluaranLaporanPenutupanKas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListKoreksi.resx">
+      <DependentUpon>frmListKoreksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListLPJUP.resx">
+      <DependentUpon>frmListLPJUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListPengembalianBelanja.resx">
+      <DependentUpon>frmListPengembalianBelanja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListPenyetoranPajak.resx">
+      <DependentUpon>frmListPenyetoranPajak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListPPTK.resx">
+      <DependentUpon>frmListPPTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListSPP.resx">
+      <DependentUpon>frmListSPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmBKU.resx">
+      <DependentUpon>frmBKU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPengeluaranCariPerusahaan.resx">
+      <DependentUpon>frmPengeluaranCariPerusahaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmCekSPDRealisasi.resx">
+      <DependentUpon>frmCekSPDRealisasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmKontrak.resx">
+      <DependentUpon>frmKontrak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListBAST.resx">
+      <DependentUpon>frmListBAST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListPengeluaran.resx">
+      <DependentUpon>frmListPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListKontrak.resx">
+      <DependentUpon>frmListKontrak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListPenerimaan.resx">
+      <DependentUpon>frmListPenerimaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListSKRSKPD.resx">
+      <DependentUpon>frmListSKRSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListSPPBUD.resx">
+      <DependentUpon>frmListSPPBUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmListTransaksiBank.resx">
+      <DependentUpon>frmListTransaksiBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmLPJUP.resx">
+      <DependentUpon>frmLPJUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPajak.resx">
+      <DependentUpon>frmPajak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPengeluaran.resx">
+      <DependentUpon>frmPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPengeluaranPengembalian.resx">
+      <DependentUpon>frmPengeluaranPengembalian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPerbaikiNoBKU.resx">
+      <DependentUpon>frmPerbaikiNoBKU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmBUDRegisterSP2D.resx">
+      <DependentUpon>frmBUDRegisterSP2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmRegisterSPP.resx">
+      <DependentUpon>frmRegisterSPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmRegisterSTS.resx">
+      <DependentUpon>frmRegisterSTS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmRekapGaji.resx">
+      <DependentUpon>frmRekapGaji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSaldoAwalBendahara.resx">
+      <DependentUpon>frmSaldoAwalBendahara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSetorPenerimaan.resx">
+      <DependentUpon>frmSetorPenerimaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmShowDataImport.resx">
+      <DependentUpon>frmShowDataImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSKRSKPD.resx">
+      <DependentUpon>frmSKRSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSPDdanRealissasi.resx">
+      <DependentUpon>frmSPDdanRealissasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSPDKepmen900.resx">
+      <DependentUpon>frmSPDKepmen900.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSPJAdministratifPenerimaan.resx">
+      <DependentUpon>frmSPJAdministratifPenerimaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSPJFungsional.resx">
+      <DependentUpon>frmSPJFungsional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSPJFungsionalPenerimaan.resx">
+      <DependentUpon>frmSPJFungsionalPenerimaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSPP.resx">
+      <DependentUpon>frmSPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmPenerimaan.resx">
+      <DependentUpon>frmPenerimaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmSUbKegiatan.resx">
+      <DependentUpon>frmSUbKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmTambahPajak.resx">
+      <DependentUpon>frmTambahPajak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmTerimaSetorKasda.resx">
+      <DependentUpon>frmTerimaSetorKasda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlPencarian.resx">
+      <DependentUpon>ctrlPencarian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlTextBilling.resx">
+      <DependentUpon>ctrlTextBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataAccess\frmTerimaSPM.resx">
+      <DependentUpon>frmTerimaSPM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmTrxBank.resx">
+      <DependentUpon>frmTrxBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlKodeSetor.resx">
+      <DependentUpon>ctrlKodeSetor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\frmBAST.resx">
+      <DependentUpon>frmBAST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\MenuBendahara.resx">
+      <DependentUpon>MenuBendahara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm.resx">
+      <DependentUpon>ChildForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrKodelStandardHarga.resx">
+      <DependentUpon>ctrKodelStandardHarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlBank.resx">
+      <DependentUpon>ctrlBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlBendahara.resx">
+      <DependentUpon>ctrlBendahara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlBulan.resx">
+      <DependentUpon>ctrlBulan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bendahara\ctrlJenisSPP.resx">
+      <DependentUpon>ctrlJenisSPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFooter.resx">
+      <DependentUpon>ctrlFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlFooterMain.resx">
+      <DependentUpon>ctrlFooterMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlJabatan.resx">
+      <DependentUpon>ctrlJabatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlKategoriBaru.resx">
+      <DependentUpon>ctrlKategoriBaru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlKegiatan.resx">
+      <DependentUpon>ctrlKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlKegiatanAPBD.resx">
+      <DependentUpon>ctrlKegiatanAPBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlKodeRekening.resx">
+      <DependentUpon>ctrlKodeRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlKodeRekeningTerpisah.resx">
+      <DependentUpon>ctrlKodeRekeningTerpisah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlMasterKegiatan.resx">
+      <DependentUpon>ctrlMasterKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlMisi.resx">
+      <DependentUpon>ctrlMisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlMPrioritas.resx">
+      <DependentUpon>ctrlMPrioritas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlOtoRitas.resx">
+      <DependentUpon>ctrlOtoRitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlPejabat.resx">
+      <DependentUpon>ctrlPejabat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlPotongan.resx">
+      <DependentUpon>ctrlPotongan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlProfileRekening.resx">
+      <DependentUpon>ctrlProfileRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlProgramKegiatan.resx">
+      <DependentUpon>ctrlProgramKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlRekeningKegiatan.resx">
+      <DependentUpon>ctrlRekeningKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlRPJMDTujuan.resx">
+      <DependentUpon>ctrlRPJMDTujuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSatuan.resx">
+      <DependentUpon>ctrlSatuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSessionRKA.resx">
+      <DependentUpon>ctrlSessionRKA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSPD.resx">
+      <DependentUpon>ctrlSPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSPJUP.resx">
+      <DependentUpon>ctrlSPJUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlStandardHarga.resx">
+      <DependentUpon>ctrlStandardHarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlStatusPengguna.resx">
+      <DependentUpon>ctrlStatusPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSubKegiatan.resx">
+      <DependentUpon>ctrlSubKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSumberDana.resx">
+      <DependentUpon>ctrlSumberDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlTahapRBA.resx">
+      <DependentUpon>ctrlTahapRBA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlTanggal.resx">
+      <DependentUpon>ctrlTanggal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlTriwulan.resx">
+      <DependentUpon>ctrlTriwulan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlUrusanBaru.resx">
+      <DependentUpon>ctrlUrusanBaru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlVia.resx">
+      <DependentUpon>ctrlVia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlWaktu.resx">
+      <DependentUpon>ctrlWaktu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="External\frmSinergi.resx">
+      <DependentUpon>frmSinergi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmADK.resx">
+      <DependentUpon>frmADK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnggaranKas.resx">
+      <DependentUpon>frmAnggaranKas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnggaranKasRekap.resx">
+      <DependentUpon>frmAnggaranKasRekap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmApplicationProfile.resx">
+      <DependentUpon>frmApplicationProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuatPassword.resx">
+      <DependentUpon>frmBuatPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCariRekening.resx">
+      <DependentUpon>frmCariRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCekDPAPlafon.resx">
+      <DependentUpon>frmCekDPAPlafon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCekInputAnggaranKas.resx">
+      <DependentUpon>frmCekInputAnggaranKas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCulture.resx">
+      <DependentUpon>frmCulture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDasarHukum.resx">
+      <DependentUpon>frmDasarHukum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashBoard.resx">
+      <DependentUpon>frmDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDPA.resx">
+      <DependentUpon>frmDPA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDPAPenyempurnaan.resx">
+      <DependentUpon>frmDPAPenyempurnaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportAPBD.resx">
+      <DependentUpon>frmImportAPBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInputKodeRekening.resx">
+      <DependentUpon>frmInputKodeRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInputSUmberDanaKegiatan.resx">
+      <DependentUpon>frmInputSUmberDanaKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIputTimTAPD.resx">
+      <DependentUpon>frmIputTimTAPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInputPlafonPerRekening.resx">
+      <DependentUpon>frmInputPlafonPerRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKategoriBaru.resx">
+      <DependentUpon>frmKategoriBaru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKoneksiPerencanaan.resx">
+      <DependentUpon>frmKoneksiPerencanaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKUAPPASTerintegrasi.resx">
+      <DependentUpon>frmKUAPPASTerintegrasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListPejabat.resx">
+      <DependentUpon>frmListPejabat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoginBaru.resx">
+      <DependentUpon>frmLoginBaru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMappingRekening.resx">
+      <DependentUpon>frmMappingRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMappingSKPDUrusanBaru.resx">
+      <DependentUpon>frmMappingSKPDUrusanBaru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMappingUrusan.resx">
+      <DependentUpon>frmMappingUrusan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapUrusanBaru.resx">
+      <DependentUpon>frmMapUrusanBaru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMapUrusanBAruProgram.resx">
+      <DependentUpon>frmMapUrusanBAruProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterPrioritas.resx">
+      <DependentUpon>frmMasterPrioritas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterSumberDana.resx">
+      <DependentUpon>frmMasterSumberDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPDFView.resx">
+      <DependentUpon>frmPDFView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPejabatDetail.resx">
+      <DependentUpon>frmPejabatDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPenggunaRinci.resx">
+      <DependentUpon>frmPenggunaRinci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPenjabaran.resx">
+      <DependentUpon>frmPenjabaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerbaikiKodeProgramKegiatan.resx">
+      <DependentUpon>frmPerbaikiKodeProgramKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisterSPD.resx">
+      <DependentUpon>frmRegisterSPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRekapBelanjaLangsung.resx">
+      <DependentUpon>frmRekapBelanjaLangsung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRekapKUAPPAS.resx">
+      <DependentUpon>frmRekapKUAPPAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRekening.resx">
+      <DependentUpon>frmRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRekening90.resx">
+      <DependentUpon>frmRekening90.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetStatusInput.resx">
+      <DependentUpon>frmSetStatusInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingProfileRekening.resx">
+      <DependentUpon>frmSettingProfileRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSP2DOnlineMasukkanOTP.resx">
+      <DependentUpon>frmSP2DOnlineMasukkanOTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatus.resx">
+      <DependentUpon>frmStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSumberDana.resx">
+      <DependentUpon>frmSumberDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestPDF.resx">
+      <DependentUpon>frmTestPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrusanDinas.resx">
+      <DependentUpon>frmUrusanDinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserGroup.resx">
+      <DependentUpon>frmUserGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSP2DOnline.resx">
+      <DependentUpon>frmSP2DOnline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSP2DOnlineDaftarBank.resx">
+      <DependentUpon>frmSP2DOnlineDaftarBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainBaru.resx">
+      <DependentUpon>frmMainBaru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KasDaerah\frmCatatTanggalCair.resx">
+      <DependentUpon>frmCatatTanggalCair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pdfViewer.resx">
+      <DependentUpon>pdfViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="ctrlDesa.resx">
+      <DependentUpon>ctrlDesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlDinas.resx">
+      <DependentUpon>ctrlDinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlDusun.resx">
+      <DependentUpon>ctrlDusun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlHeader.resx">
+      <DependentUpon>ctrlHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlHeaderMain.resx">
+      <DependentUpon>ctrlHeaderMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlJenisAnggaran.resx">
+      <DependentUpon>ctrlJenisAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlKecamatan.resx">
+      <DependentUpon>ctrlKecamatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlMasterProgram.resx">
+      <DependentUpon>ctrlMasterProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlNavigation.resx">
+      <DependentUpon>ctrlNavigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlProgramMusrenmbang.resx">
+      <DependentUpon>ctrlProgramMusrenmbang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlUnitKerja.resx">
+      <DependentUpon>ctrlUnitKerja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlUrusan.resx">
+      <DependentUpon>ctrlUrusan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlSKPD.resx">
+      <DependentUpon>ctrlSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlUrusanPemerintahan.resx">
+      <DependentUpon>ctrlUrusanPemerintahan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesaDetail.resx">
+      <DependentUpon>frmDesaDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDusunDetail.resx">
+      <DependentUpon>frmDusunDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKecamatanDetail.resx">
+      <DependentUpon>frmKecamatanDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListDesa.resx">
+      <DependentUpon>frmListDesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListDinas.resx">
+      <DependentUpon>frmListDinas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKecamatan.resx">
+      <DependentUpon>frmKecamatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListDusun.resx">
+      <DependentUpon>frmListDusun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListUK.resx">
+      <DependentUpon>frmListUK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasterProgramDetail.resx">
+      <DependentUpon>frmMasterProgramDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPengguna.resx">
+      <DependentUpon>frmPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRekap.resx">
+      <DependentUpon>frmRekap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingPemda.resx">
+      <DependentUpon>frmSettingPemda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSKPD.resx">
+      <DependentUpon>frmSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUK.resx">
+      <DependentUpon>frmUK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUrusanPemerintahan.resx">
+      <DependentUpon>frmUrusanPemerintahan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SideBarAnggaran.resx">
+      <DependentUpon>SideBarAnggaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmCreateIDBilling.resx">
+      <DependentUpon>frmCreateIDBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmDataCreateIdilling.resx">
+      <DependentUpon>frmDataCreateIdilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmDataIDBilling.resx">
+      <DependentUpon>frmDataIDBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmDataNPWP.resx">
+      <DependentUpon>frmDataNPWP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmInputOTP.resx">
+      <DependentUpon>frmInputOTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmMPN.resx">
+      <DependentUpon>frmMPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmReportIdBilling.resx">
+      <DependentUpon>frmReportIdBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmReportSP2DOnline.resx">
+      <DependentUpon>frmReportSP2DOnline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmRespond511.resx">
+      <DependentUpon>frmRespond511.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmRiwayat.resx">
+      <DependentUpon>frmRiwayat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SP2DOnline\frmSP2DOnlne510Respond.resx">
+      <DependentUpon>frmSP2DOnlne510Respond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahRekeningKesehatan.resx">
+      <DependentUpon>TambahRekeningKesehatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TanggalTandaTangan.resx">
+      <DependentUpon>TanggalTandaTangan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="treeMasterProgramKegiatan.resx">
+      <DependentUpon>treeMasterProgramKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeProgramKegiatan.resx">
+      <DependentUpon>TreeProgramKegiatan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="treeRekening.resx">
+      <DependentUpon>treeRekening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="treeSKPD.resx">
+      <DependentUpon>treeSKPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeSumberDana.resx">
+      <DependentUpon>TreeSumberDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="treeWilayah.resx">
+      <DependentUpon>treeWilayah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlProgram.resx">
+      <DependentUpon>ctrlProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccess\DataAccess.csproj" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Updater\RedCell.Diagnostics.Update\RedCell.Diagnostics.Update.csproj" />
+    <None Include="Updater\RedCell.Diagnostics.Update\Update.cd" />
+    <None Include="Updater\RedCell.Net\RedCell.Net.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Header.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\SP2DOnLine\Catatan.txt" />
+    <None Include="Icon\check.png" />
+    <None Include="Icon\coins.png" />
+    <None Include="Icon\download.png" />
+    <None Include="Icon\globe.png" />
+    <None Include="Icon\layers.png" />
+    <None Include="Icon\plus.png" />
+    <None Include="Icon\power.png" />
+    <None Include="Icon\search.png" />
+    <None Include="Icon\settings.png" />
+    <None Include="Icon\users-alt %281%29.png" />
+    <None Include="Icon\users-alt.png" />
+    <None Include="Image\excel_all.png" />
+    <None Include="Image\Splach.png" />
+    <None Include="Image\TerimaSPM.jpg" />
+    <None Include="Resources\nav_bulb.png" />
+    <None Include="Resources\nav_extra.png" />
+    <None Include="Resources\nav_home.png" />
+    <None Include="Resources\nav_info.png" />
+    <None Include="Resources\nav_new.png" />
+    <None Include="Resources\nav_settings.png" />
+    <None Include="Resources\nav_tool.png" />
+    <None Include="Resources\orionCollapse.png" />
+    <None Include="Resources\orionLogo.png" />
+    <None Include="Resources\SplashAset.jpg" />
+    <None Include="Resources\splashAset2.jpg" />
+    <None Include="Resources\Testico.ico" />
+    <None Include="Resources\wpAppearance.png" />
+    <None Include="Resources\wpAppearanceH.png" />
+    <None Include="Resources\wpAppearanceS.png" />
+    <None Include="Resources\wpComments.png" />
+    <None Include="Resources\wpCommentsH.png" />
+    <None Include="Resources\wpCommentsS.png" />
+    <None Include="Resources\wpDesktop.png" />
+    <None Include="Resources\wpDesktopH.png" />
+    <None Include="Resources\wpDesktopS.png" />
+    <None Include="Resources\wpLinks.png" />
+    <None Include="Resources\wpLinksH.png" />
+    <None Include="Resources\wpLinksS.png" />
+    <None Include="Resources\wpMedia.png" />
+    <None Include="Resources\wpMediaH.png" />
+    <None Include="Resources\wpMediaS.png" />
+    <None Include="Resources\wpPages.png" />
+    <None Include="Resources\wpPagesH.png" />
+    <None Include="Resources\wpPagesS.png" />
+    <None Include="Resources\wpPost.png" />
+    <None Include="Resources\wpPostH.png" />
+    <None Include="Resources\wpPostS.png" />
+    <None Include="Resources\wpSettings.png" />
+    <None Include="Resources\wpSettingsH.png" />
+    <None Include="Resources\wpSettingsS.png" />
+    <None Include="Resources\wpStore.png" />
+    <None Include="Resources\wpStoreH.png" />
+    <None Include="Resources\wpStoreS.png" />
+    <None Include="Resources\wpSuggestions.png" />
+    <None Include="Resources\wpSuggestionsH.png" />
+    <None Include="Resources\wpSuggestionsS.png" />
+    <None Include="Resources\wpTools.png" />
+    <None Include="Resources\wpToolsH.png" />
+    <None Include="Resources\wpToolsS.png" />
+    <None Include="Resources\wpUsers.png" />
+    <None Include="Resources\wpUsersH.png" />
+    <None Include="Resources\wpUsersS.png" />
+    <Content Include="Updater\Ionic.Zip.Reduced.dll" />
+    <None Include="Image\lambang.png" />
+    <None Include="Image\lambangkecil.gif" />
+    <None Include="Image\SPlash.gif" />
+    <None Include="Image\SPlash.jpg" />
+    <None Include="Image\SPlashAPBD.jpg" />
+    <Content Include="Catatan.txt" />
+    <None Include="Resources\splashAkuntansi.jpg" />
+    <None Include="Resources\splashAkuntansi1.jpg" />
+    <None Include="Resources\action_save.gif" />
+    <None Include="Resources\action_print.gif" />
+    <None Include="Resources\action_refresh.gif" />
+    <None Include="Resources\arrow_down.gif" />
+    <None Include="Resources\flag_orange.gif" />
+    <None Include="Resources\savetheapplication_guardar_2958.ico" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\edit_add.png" />
+    <None Include="Resources\mini_edit.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\reload.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\back.png" />
+    <Content Include="Resources\Close-32.png" />
+    <Content Include="Resources\Close2.png" />
+    <Content Include="sampledata.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Akunting\NewFolder1\" />
+    <Folder Include="Laporan\" />
+    <Folder Include="Model\External\" />
+    <Folder Include="Model\Laporan\NewFolder1\" />
+    <Folder Include="Model\SP2DOnLine\NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Z80NavBarControl\Z80NavBarControl.vbproj">
+      <Project>{d893bdab-6276-4bc6-892f-d1193fba8f3c}</Project>
+      <Name>Z80NavBarControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="..\packages\Syncfusion.PdfToImageConverter.WinForms.23.1.43\build\net46\Syncfusion.PdfToImageConverter.WinForms.targets" Condition="Exists('..\packages\Syncfusion.PdfToImageConverter.WinForms.23.1.43\build\net46\Syncfusion.PdfToImageConverter.WinForms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Syncfusion.PdfToImageConverter.WinForms.23.1.43\build\net46\Syncfusion.PdfToImageConverter.WinForms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Syncfusion.PdfToImageConverter.WinForms.23.1.43\build\net46\Syncfusion.PdfToImageConverter.WinForms.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

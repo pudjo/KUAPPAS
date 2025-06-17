@@ -1,0 +1,9 @@
+﻿UserAPI SP2DO Ketapang
+
+ClientId : ClientSP2DKetapang
+ClientSecret : lkaurLrcmDXrqRJzAOxAKQWuvAIYGG
+
+
+Email : ketapang@bankkalbar.co.id
+Nomor Referensi : 1016* (12 Digit)
+NomorHandphoneOTP : 081211619471

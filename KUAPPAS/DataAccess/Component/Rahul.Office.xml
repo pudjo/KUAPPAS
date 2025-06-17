@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Rahul.Office
+</name>
+</assembly>
+<members>
+<member name="M:Rahul.Office.OO.Writer.TokenReplacement.replicateRow(System.String,System.Boolean,System.Int32)">
+	<remarks>
+ replicationCount includes the no. of times this row is already present in the content.
+ So, If it is present once, and desired no. is 3, pass 3 (not 2).
+ </remarks>
+</member><member name="M:Rahul.Office.Common.XmlUtil.getTagContainingTokenPattern(System.String,System.String)">
+	<remarks>
+ Tag contains angle brackets.
+</remarks>
+</member><member name="M:Rahul.Office.Common.XmlUtil.getBeginTagMatchingPattern(System.String)">
+	<remarks>tag should contain angle brackets.</remarks>
+</member><member name="F:Rahul.Office.Common.TokenReplacementBase.m_replacementCount">
+	<summary>
+ Holds the count for the number of times each token has been replaced in the Content.
+ Used for providing replacement of ith token occurence.
+ </summary>
+</member><member name="M:Rahul.Office.Common.TokenReplacementBase.replaceToken(System.String,System.Object,System.Int32)">
+	<param name="token">token should contain tokenStart and tokenEnd</param>
+	<param name="replaceOccurence">
+ -1 replaces all occurences of the token. Any non-negative ith value (0 is non-negative!!!) replaces only the ith occurence.
+ i is measured as the occurence number in the original content, NOT in the intermediate replaced content.
+ Also, this function should be always called in increasing order of i for the same token, otherwise the Office Package
+ produced would be corrupt.
+ </param>
+	<remarks>
+ The case of replacement of ith occurence of token would be especially tricky. Because, suppose for 2 calls to this function for
+ the same token with i=1 and i=2; after the first call, the originally second occurence of the token is now the first one in the replaced text after the first call.
+ To overcome this situation, we might be tempted to count the Token occurences in the original text. But the developer using
+ this library might be relying on the fact that after the first call, only (n-1) more occurences of the token are left, where n was the original token count.
+ </remarks>
+</member><member name="M:Rahul.Office.Common.TokenReplacementBase.replaceTokens(System.Collections.Generic.List{Rahul.Office.Token.TokenReplacementInfo},System.Boolean)">
+	<summary>
+ Set sort to true if you are not sure of order of replaceOccurence in list for same tokens.
+ </summary>
+</member><member name="M:Rahul.Office.Common.TokenReplacementBase.cleanedUpToken(System.Text.RegularExpressions.Match)">
+	<summary>
+ Use this function to clean-up Markup in matches inserted by Office applications by splitting up your Tokens.
+ </summary>
+</member><member name="M:Rahul.Office.Common.TokenReplacementBase.replicateRowInternal(System.String,System.Boolean,System.Int32,System.String)">
+	<remarks>
+ replicationCount includes the no. of times this row is already present in the content.
+ So, If it is present once, and desired no. is 3, pass 3 (not 2).
+ </remarks>
+</member><member name="M:Rahul.Office.MS.Word.TokenReplacement.replicateRow(System.String,System.Boolean,System.Int32)">
+	<remarks>
+ replicationCount includes the no. of times this row is already present in the content.
+ So, If it is present once, and desired no. is 3, pass 3 (not 2).
+ </remarks>
+</member><member name="P:Rahul.Office.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Rahul.Office.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Rahul.Office.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

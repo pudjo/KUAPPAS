@@ -1,0 +1,106 @@
+Public Const CON_OTORITAS_ADMIN As Integer = 1000
+
+Public Const CON_OTORITAS_MANANG As Integer = 1
+Public Const CON_OTORITAS_PLAFON As Integer = 2
+
+Public Const CON_OTORITAS_TAPD As Integer = 3
+Public Const CON_OTORITAS_TAPDP As Integer = 7
+
+'
+
+Public Const CON_OTORITAS_TAE As Integer = 3
+Public Const CON_OTORITAS_APBD As Integer = 4
+Public Const CON_OTORITAS_DPA As Integer = 5
+Public Const CON_OTORITAS_PLAFONP As Integer = 6
+Public Const CON_OTORITAS_TAEP As Integer = 7
+Public Const CON_OTORITAS_APBDP As Integer = 8
+Public Const CON_OTORITAS_DPAP As Integer = 9
+
+Public Const CON_OTORITAS_BENDAHARAPENERIMAAN_SKPD As Integer = 11
+Public Const CON_OTORITAS_BENDAHARAPENERIMAAN_PPKD As Integer = 12
+Public Const CON_OTORITAS_BENDAHARAPENGELUARAN_SKPD As Integer = 13
+Public Const CON_OTORITAS_BENDAHARAPENGELUARAN_PEMBANTU_SKPD As Integer = 14
+Public Const CON_OTORITAS_BENDAHARAPENGELUARAN_PPKD As Integer = 15
+Public Const CON_OTORITAS_KASDA As Integer = 50
+Public Const CON_OTORITAS_BUD As Integer = 60
+
+Public Const CON_OTORITAS_BUDTERIMASPM As Integer = 61
+Public Const CON_OTORITAS_BUDVERIFIKASISPM As Integer = 62
+Public Const CON_OTORITAS_BUDCETAKSP2D As Integer = 63
+Public Const CON_OTORITAS_BUDSP2DONLINE As Integer = 64
+
+Public Const CON_OTORITAS_BLUD As Integer = 65
+Public Const CON_OTORITAS_BOS As Integer = 66
+
+
+Public Const CON_OTORITAS_AKUNTANSI As Integer = 70
+Public Const CON_OTORITAS_PPK As Integer = 16
+
+No mapping exists from DbType UInt32 to a known SqlDbType
+
+"The parameterized query '(@pID int,@pNama nvarchar(7),@pStatus int,@pIsUserDinas smallint' expects the parameter '@pNIK', which was not supplied."
+
+   EventResponseMessage ret = new EventResponseMessage();
+            ret.ResponseStatus = true;
+            return default(EventResponseMessage);try
+            {
+
+                ctrlDinas1.Create();
+                
+                txtNoBAST.Text = "";
+                ctrlKontrak1.Clear();
+                txtKeteranganBAST.Text = "";
+                txtKeteranganKontrak.Text = "";
+                
+                
+
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                ret.ResponseStatus = false;
+
+                return ret;
+            }
+
+
+ private void ctrlDinas1_OnChanged(int pIDSKPD, int pIDUK)
+        {
+            m_idDinas = pIDSKPD;
+            m_iKodeUK = pIDUK;
+       
+            if (m_bNew == true)
+            {
+                ctrlKontrak1.Create(m_idDinas);
+
+            } 
+            //ctrlUrusanPemerintahan1.Create(pIDSKPD, (int)GlobalVar.TahunAnggaran);
+        }
+
+
+ private void ctrlKontrak1_OnChanged(long pID)
+        {
+            Kontrak k =  ctrlKontrak1.GetKontrak();
+            if (k!=null){
+                ctrlTanggalKontrak.Tanggal = k.DtKontrak;
+                txtKeteranganKontrak.Text  = k.Uraian;
+                txtKeteranganKontrak.Enabled = false;
+                ctrlTanggalKontrak.Enabled = false;
+                ctrlUrusanPemerintahan1.SetID(k.IDUrusan);
+                m_idUrusan = k.IDUrusan;
+                ctrlProgram1.Create(k.Tahun, k.IDDInas, k.IDUrusan);
+                m_idProgram = k.IDProgram;
+                ctrlProgram1.SetID(k.IDProgram);
+                ctrlKegiatanAPBD1.Create(k.Tahun, k.IDDInas, k.IDUrusan, k.IDProgram, k.IDKegiatan);
+                m_IDKKegiatan = k.IDKegiatan;
+                ctrlKegiatanAPBD1.SetID(k.IDKegiatan);
+                ctrlSubKegiatan1.Create(k.Tahun, k.IDDInas, k.IDUrusan, k.IDProgram, k.IDKegiatan);
+                m_IDSUbKegiatan = k.IDSubKegiatan;
+                ctrlSubKegiatan1.SetID(k.IDSubKegiatan);
+
+
+
+            }
+            
+        }

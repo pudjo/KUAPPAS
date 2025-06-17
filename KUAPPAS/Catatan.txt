@@ -1,0 +1,143 @@
+﻿https://kitabisa.com/yatimrawajati?ref=978b&utm_source=direct&utm_medium=usershare&utm_campaign=userreff
+https://wiredcraft.com/blog/high-security-electron-js-application/
+//http://techbrij.com/database-change-notifications-asp-net-signalr-sqldependency
+https://lvcharts.net/
+http://blog.selfbits.io/blog/tutorial/angular2/2016/11/24/dashboard-tutorial-part1-setup
+
+0
+
+https://dotnettutorials.net/lesson/linq-distinct-method/
+
+TOOLS --> nuGet Package Manager --> Package Manager Console
+
+then copy that [Net.ServicePointManager]::SecurityProtocol=[Net.ServicePointManager]::SecurityProtocol-bOR [Net.SecurityProtocolType]::Tls12
+
+press enter.
+
+try again, it works
+
+alter table tSPP add NamaPenandaTanganSPM varchar(100),
+ JabatanPenandaTanganSPM varchar(100),NIPPenandaTanganSPM varchar(50)
+ 
+alter table tSetorRekening add KodeUK int , idsubkegiatan bigint 
+select * from tSetor
+update tSetor set idsubkegiatan = idkegiatan * 100 + btIdSubKegiatan
+
+update tKoreksiDetail set idsubkegiatan = (cast(IDKegiatan as bigint) * 100) + btIDsubkegiatan 
+
+update tKontrak Set IDURUSAN=btKodekategoriPelaksana * 100 + btKOdeUrusanPelaksana 
+update tKontrak Set IDProgram =      (btKodekategoriPelaksana * 10000) + (btKOdeUrusanPelaksana) * 100 + btIDProgram
+update tKontrak Set IDKEGIATAN =      (btKodekategoriPelaksana * 10000000) + (btKOdeUrusanPelaksana) * 100000 + 
+    (btIDProgram * 1000)+ btidkegiatan
+update tKontrak Set IDSUBKEGIATAN =      
+(cast(btKodekategoriPelaksana as bigint) * 1000000000) + (cast(btKOdeUrusanPelaksana as bigint)) * 10000000 + (cast(btIDProgram as bigint)* 100000)+
+       (cast(btidkegiatan as bigint)* 100) + cast(btIDSubKegiatan as bigint)
+
+
+	   alter table tSPP add KodeBank char(3)
+Update tSPP set Kodebank='123'
+
+alter table mPerusahaan add KodeBank char(3)
+Update mPerusahaan Set KodeBank='123'
+
+alter table mPerusahaan add NamaDlmRekeningBank varchar(50)
+alter table tSPP add NamaDlmRekeningBank varchar(50)
+
+alter table mPejabat add NamaDlmRekeningBank varchar(50)
+
+CREATE TABLE [dbo].[Banks](
+	[bankCode] [char](3) NOT NULL,
+	[Nama] [varchar](50) NULL,
+ CONSTRAINT [PK_Banks] PRIMARY KEY CLUSTERED 
+(
+	[bankCode] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+insert into Banks values ('123','Bank Kalimantan Barat')
+insert into Banks values ('008','Bank mandiri')
+insert into Banks values ('002','Bank Rakyat Indonesia')
+
+https://www.c-sharpcorner.com/article/transaction-in-net/
+
+alter table tBKURekening add  IdProgram int, IdKegiatan int 
+
+https://wa-net.coding4ever.net/
+http://coding4ever.net/blog/2020/07/07/whatsapp-net-client/
+
+https://blog.ultramsg.com/send-whatsapp-message-by-whatsapp-api-c-sharp/
+
+alter table tSetorRekening Add KodeBilling char(30), IDUrusan int, IDprogram int, IdKegiatan int 
+
+CREATE FUNCTION GetMaxNoUrutRef(
+
+)
+
+RETURNS int
+AS
+BEGIN
+	-- Declare the return variable here
+	DECLARE @ResultVar int 
+	Select @ResultVar= max(isnull(inourutRef,0)) from tSPP 
+	return @ResultVar
+	
+END
+GO
+
+https://help.syncfusion.com/file-formats/pdf/pdfgrid
+https://www.syncfusion.com/forums/132998/adding-multiple-pdf-grids?reply=z9uc87
+
+
+https://www.youtube.com/watch?v=i43lPT8Rdz4
+
+
+alter table tSPP add idcrt int, dcrt Datetime, idupdate int, dupdate DateTime ,idCetak int, dCetak DateTime
+alter table tPanjar add idcrt int, dcrt Datetime, idupdate int, dupdate DateTime 
+alter table tSetor add idcrt int, dcrt Datetime, idupdate int, dupdate DateTime 
+alter table tSTS add idcrt int, dcrt Datetime, idupdate int, dupdate DateTime 
+alter table tKoreksi add idcrt int, dcrt Datetime, idupdate int, dupdate DateTime 
+
+
+select * from tAnggaranKas where iddinas= 4010300
+
+select UnitAnggaran from tSPP
+select UnitAnggaran from tSPP
+alter table tPanjar add UnitAnggaran  int 
+alter table tSetor add UnitAnggaran  int 
+alter table tKoreksi add UnitAnggaran  int 
+alter table tBKU  add UnitAnggaran  int 
+
+select * from  mUnitKerja  where skpd=4010300
+update mUnitKerja set UntAnggaran  =0 where skpd=4010300
+
+select btKodeUk,* from tSUBKegiatan where IDDInas= 4010300
+update tSUBKegiatan set btKodeuk = 0 where IDDInas= 4010300
+update tAnggaranKas set btKodeuk = 0 where IDDInas= 4010300
+update tAnggaranRekening_A set btKodeuk = 0 where IDDInas= 4010300
+update tBKU Set UnitAnggaran= 0 
+update tBKU Set UnitAnggaran= 1 where iddinas = 1020100
+update ProgramKegiatan  Set KodeUK = 1 where iddinas = 1020100 and  KodeUK > 25 
+update tAnggaranRekening_A Set btKodeUK = 1 where iddinas = 1020100 and  btKodeUK > 25 
+
+
+USE [KTP2024]
+GO
+
+/****** Object:  View [dbo].[vwBKUBelanja]    Script Date: 06/03/2024 11.47.33 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER  VIEW [dbo].[vwBKUBelanja] AS
+select tBKU.IDDInas, tBKU.UnitAnggaran, tBKURekening.IDurusan,tBKURekening.IDprogram,tBKURekening.IDKegiatan,tBKURekening.IDSubKegiatan,
+tBKURekening.IIDrekening,dtBukti , tBKU.iDebet , tBKURekening.cJumlah , tBKU.cJenisBelanja 
+from tbku inner join tBKURekening ON tBKU.iNoUrut =tBKURekening.inourut 
+where tBKURekening.IIDrekening like '5%'
+GO
+
+
+

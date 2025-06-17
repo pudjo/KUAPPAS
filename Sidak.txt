@@ -1,0 +1,213 @@
+
+CREATE  VIEW [dbo].[vWOrganisasi2] AS SELECT iTahun , idsinergi,ID,ID as SKPD,Kode, btKodeKategori, btKodeUrusan,btKodeSKPD, 0 AS btKodeUK, 
+sNamaSKPD AS sNamaUK FROM mSKPD  
+where id <> 1020100 and mSKPD.level=1   
+UNION 
+SELECT 2023 as iTahun ,mUnitKerja.idsinergi,mUnitKerja.ID,SKPD,mSKPD.Kode + '0' +CAST(btKodeUK as CHAR(1)) as Kode ,mUnitKerja.btKodeKategori, mUnitKerja.btKodeUrusan,mUnitKerja.btKodeSKPD, btKodeUK, sNamaUK FROM mUnitKerja
+inner join mSKPD on mSKPD.ID= mUnitKerja.SKPD 
+where mUnitKerja.idSinergi is not null and mUnitKerja.btKodeUK < 10
+
+UNION 
+SELECT 2023 as iTahun ,mUnitKerja.idsinergi,mUnitKerja.ID,SKPD,mSKPD.Kode + CAST(btKodeUK as CHAR(1)) as Kode ,mUnitKerja.btKodeKategori, mUnitKerja.btKodeUrusan,mUnitKerja.btKodeSKPD, btKodeUK, sNamaUK FROM mUnitKerja
+inner join mSKPD on mSKPD.ID= mUnitKerja.SKPD 
+where mUnitKerja.idSinergi is not null and mUnitKerja.btKodeUK >= 10
+
+
+DROP TABLE programKegiatan
+GO 
+
+select * into programKegiatan from (
+Select 
+vWOrganisasi2.sNamaUK  as NamaOrganisasi,
+vWOrganisasi2.btKodeUK as KodeUK,
+vWOrganisasi2.Kode,
+tSUBKegiatan.iTahun,
+tSUBKegiatan.IDDInas,
+tSUBKegiatan.IDurusan as iDurusanProgram,
+mUrusan.sNamaUrusan  as  NamaUrusanProgram,
+tSubKegiatan.btKodekategoriPElaksana, tSubKegiatan.btKodeUrusan,
+tSUBKegiatan.IDProgram,
+tPrograms_A.sNamaProgram as NamaProgram,
+tSUBKegiatan.IDKegiatan,
+tKegiatan_A.sNAma as NamaKegiatan,
+tSUBKegiatan.IDSUbKegiatan, 
+Nama as 
+NamaSubKegiatan
+ From tSUBKegiatan inner join 
+vWOrganisasi2 on tSUBKegiatan.IDDinas = vWOrganisasi2.SKPD and tSUBKegiatan.btKodeUK = vWOrganisasi2.btKodeUK 
+INNER join mUrusan on  tSUBKegiatan.IDurusan  = mUrusan.ID 
+INNER JOIN tPrograms_A on tPrograms_A.iTahun =tSUBKegiatan.iTahun and   
+tPrograms_A.IDDinas =  tSUBKegiatan.IDDInas and  tPrograms_A.IDProgram = tSUBKegiatan.IDProgram 
+INNER JOIN tKegiatan_A on tKegiatan_A.iTahun =tSUBKegiatan.iTahun and   
+tKegiatan_A.IDDinas =  tSUBKegiatan.IDDInas and 
+tKegiatan_A.IDUrusan =  tSUBKegiatan.IDUrusan and 
+ tKegiatan_A.IDProgram = tSUBKegiatan.IDProgram 
+and tKegiatan_A.IDKegiatan=  tSUBKegiatan.IDKegiatan
+where tSubKegiatan.iDDInas<>  1020100 
+UNION 
+Select 
+vWOrganisasi2.sNamaUK  as NamaOrganisasi,
+vWOrganisasi2.btKodeUK as KodeUK,
+vWOrganisasi2.Kode,
+tSUBKegiatan.iTahun,
+tSUBKegiatan.IDDInas,
+tSUBKegiatan.IDurusan as iDurusanProgram,
+mUrusan.sNamaUrusan  as  NamaUrusanProgram,
+tSubKegiatan.btKodekategoriPElaksana, tSubKegiatan.btKodeUrusan,
+tSUBKegiatan.IDProgram,
+tPrograms_A.sNamaProgram as NamaProgram,
+tSUBKegiatan.IDKegiatan,
+tKegiatan_A.sNAma as NamaKegiatan,
+tSUBKegiatan.IDSUbKegiatan, 
+Nama as 
+NamaSubKegiatan
+--into programKegiatan
+ From tSUBKegiatan inner join 
+vWOrganisasi2 on tSUBKegiatan.IDDinas = vWOrganisasi2.SKPD and tSUBKegiatan.btKodeUK = vWOrganisasi2.btKodeUK 
+INNER join mUrusan on  tSUBKegiatan.IDurusan  = mUrusan.ID 
+INNER JOIN tPrograms_A on tPrograms_A.iTahun =tSUBKegiatan.iTahun and   
+tPrograms_A.IDDinas =  tSUBKegiatan.IDDInas and  tPrograms_A.IDProgram = tSUBKegiatan.IDProgram 
+INNER JOIN tKegiatan_A on tKegiatan_A.iTahun =tSUBKegiatan.iTahun and   
+tKegiatan_A.IDDinas =  tSUBKegiatan.IDDInas and 
+tKegiatan_A.IDUrusan =  tSUBKegiatan.IDUrusan and 
+ tKegiatan_A.IDProgram = tSUBKegiatan.IDProgram 
+and tKegiatan_A.IDKegiatan=  tSUBKegiatan.IDKegiatan
+and tKegiatan_A.idunit =  tSUBKegiatan.idunit 
+where tSubKegiatan.iDDInas= 1020100 and tSubKegiatan.btKOdeUK>0
+) A
+--USE [KTP2023BPK]
+--GO
+http://localhost:8080/api/sidak/2023
+
+
+--/****** Object:  View [dbo].[vwSIDAK]    Script Date: 10/26/2023 08:29:13 ******/
+--SET ANSI_NULLS ON
+--GO
+
+--SET QUOTED_IDENTIFIER ON
+--GO
+
+
+
+
+
+
+alter   VIEW [dbo].[vwSIDAK] AS 
+select 2022 as tahun,tSPP.inourut,
+pk.kode  as kodeskpd ,
+pk.NamaOrganisasi  as namaSKPD,
+pk.iDurusanProgram  as kodebidangprogram,
+ pk.NamaUrusanProgram  as namabidangprogram,
+tSPP.sNoSp2d as nomorbukti, 
+tSPP.dtBukukas as Tanggal_bukti,
+ tSPP.sPeruntukan as deskripsi,
+pk.IDProgram  % 100 as kodeProgram, 
+pk.NamaProgram    as namaProgram, 
+pk.IDKegiatan % 1000 as kodeKegiatan, 
+pk.NamaSubKegiatan  as namaKegiatan,
+pk.IDSUbKegiatan % 100  as kodesubkegiatan,
+pk.NamaSubKegiatan  as namasubkegiatan,
+tSPPRekening.IIDRekening   as koderekening,
+mRekening.sNamaRekening as UraianRekening,
+tSPPRekening.cJumlah  as nilai 
+from programKegiatan pk  INNER JOIN tSPP on tSPP.IDDInas = pk.IDDInas
+and tSPP.btKodeuk = pk.KodeUk 
+inner join tSPPRekening on tSPP.inourut = tSPPRekening.inourut
+and tSPPRekening.idsubkegiatan = pk.IDSUbKegiatan
+and tSPPRekening.IDProgram = pk.IDProgram 
+and tSPPRekening.IDKegiatan = pk.IDKegiatan  
+and tSPPRekening.IDUrusan = pk.iDurusanProgram
+ inner join mRekening on mRekening.IIDRekening = tSPPRekening.IIDRekening
+ where tSPP.iStatus =4 and tSPP.btJenis >2 and tSPP.IDDInas = 1020100
+union ALL
+select 2022 as tahun,tSPP.inourut,
+pk.kode  as kodeskpd ,
+pk.NamaOrganisasi  as namaSKPD,
+pk.iDurusanProgram  as kodebidangprogram,
+ pk.NamaUrusanProgram  as namabidangprogram,
+tSPP.sNoSp2d as nomorbukti, 
+tSPP.dtBukukas as Tanggal_bukti,
+ tSPP.sPeruntukan as deskripsi,
+pk.IDProgram  % 100 as kodeProgram, 
+pk.NamaProgram    as namaProgram, 
+pk.IDKegiatan % 1000 as kodeKegiatan, 
+pk.NamaSubKegiatan  as namaKegiatan,
+pk.IDSUbKegiatan % 100  as kodesubkegiatan,
+pk.NamaSubKegiatan  as namasubkegiatan,
+tSPPRekening.IIDRekening   as koderekening,
+mRekening.sNamaRekening as UraianRekening,
+tSPPRekening.cJumlah  as nilai 
+from programKegiatan pk  INNER JOIN tSPP on tSPP.IDDInas = pk.IDDInas
+inner join tSPPRekening on tSPP.inourut = tSPPRekening.inourut
+and tSPPRekening.idsubkegiatan = pk.IDSUbKegiatan
+and tSPPRekening.IDProgram = pk.IDProgram 
+and tSPPRekening.IDKegiatan = pk.IDKegiatan  
+and tSPPRekening.IDUrusan = pk.iDurusanProgram
+ inner join mRekening on mRekening.IIDRekening = tSPPRekening.IIDRekening
+ where tSPP.iStatus =4 and tSPP.btJenis >2 and tSPP.IDDInas <> 1020100
+ union 
+
+select 2022 as tahun,tPanjar.inourut,
+pk.kode  as kodeskpd ,
+pk.NamaOrganisasi  as namaSKPD,
+pk.iDurusanProgram  as kodebidangprogram,
+ pk.NamaUrusanProgram  as namabidangprogram,
+tPanjar.sNoBukti as nomorbukti, 
+tPanjar.dtBukukas as Tanggal_bukti,
+ tPanjar.sUraian as deskripsi,
+pk.IDProgram  % 100 as kodeProgram, 
+pk.NamaProgram    as namaProgram, 
+pk.IDKegiatan % 1000 as kodeKegiatan, 
+pk.NamaSubKegiatan  as namaKegiatan,
+pk.IDSUbKegiatan % 100  as kodesubkegiatan,
+pk.NamaSubKegiatan  as namasubkegiatan,
+tPanjarRekening.IIDRekening   as koderekening,
+mRekening.sNamaRekening as UraianRekening,
+tPanjarRekening.cJumlah  as nilai 
+from programKegiatan pk  INNER JOIN tPanjar  on tPanjar.IDDInas = pk.IDDInas and 
+tPanjar.btKodeuk = pk.KodeUK 
+and tPanjar.idsubkegiatan  = pk.IDSUbKegiatan 
+inner join tPanjarRekening on tPanjar.inourut = tPanjarRekening.inourut
+inner join mRekening on mRekening.IIDRekening = tPanjarRekening.IIDRekening
+where tPanjar.btJenis >2 and tPanjar.IDDInas = 1020100
+union all
+select 2022 as tahun,tPanjar.inourut,
+pk.kode  as kodeskpd ,
+pk.NamaOrganisasi  as namaSKPD,
+pk.iDurusanProgram  as kodebidangprogram,
+ pk.NamaUrusanProgram  as namabidangprogram,
+tPanjar.sNoBukti as nomorbukti, 
+tPanjar.dtBukukas as Tanggal_bukti,
+ tPanjar.sUraian as deskripsi,
+pk.IDProgram  % 100 as kodeProgram, 
+pk.NamaProgram    as namaProgram, 
+pk.IDKegiatan % 1000 as kodeKegiatan, 
+pk.NamaSubKegiatan  as namaKegiatan,
+pk.IDSUbKegiatan % 100  as kodesubkegiatan,
+pk.NamaSubKegiatan  as namasubkegiatan,
+tPanjarRekening.IIDRekening   as koderekening,
+mRekening.sNamaRekening as UraianRekening,
+tPanjarRekening.cJumlah  as nilai 
+from programKegiatan pk  INNER JOIN tPanjar  on tPanjar.IDDInas = pk.IDDInas
+and tPanjar.idsubkegiatan  = pk.IDSUbKegiatan 
+inner join tPanjarRekening on tPanjar.inourut = tPanjarRekening.inourut
+inner join mRekening on mRekening.IIDRekening = tPanjarRekening.IIDRekening
+where tPanjar.btJenis >2 and tPanjar.IDDInas <> 1020100
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+GO
+
+
+
+

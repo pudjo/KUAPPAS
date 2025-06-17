@@ -1,0 +1,57 @@
+
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - SP2DOnlineAPI.Controllers.InformasiSP2D511Controller.InformasiSP2D (SP2DOnlineAPI). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - Core.Informasi511.DataInformasi511ResponseEx. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$DataPengirim" for type "$Core.Informasi511.DataPengirim". The same schemaId is already used for type "$Core.DetailTrrx57.DataPengirim"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+
+
+Usia Wakil Presiden Saat Menjabat 
+1. Mohammad Hatta (1945–1956) – 43 Tahun 
+2. Sri Sultan Hamengkubuwana IX (1973–1978) – 61 Tahun 
+3. Adam Malik (1978-1983) – 61 Tahun 
+4. Umar Wirahadikusumah (1983–1988) – 59 Tahun 
+5. Sudharmono (1988–1993) – 61 Tahun 
+6. Try Sutrisno (1993–1998) – 58 Tahun 
+7. Bacharuddin Jusuf Habibie (14 Maret–21 Mei 1998) – 62 Tahun 
+8. Megawati Soekarnoputri (1999–2001) – 52 Tahun 
+9. Hamzah Haz (2001–2004) – 61 Tahun 
+10. Muhammad Jusuf Kalla (2004–2009) – 62 Tahun 
+11. Boediono (2009–2014) – 66 Tahun 
+12. Muhammad Jusuf Kalla (2014–2019) – 72 Tahun 
+13. Ma’ruf Amin (2019–2024) – 76 Tahun
+
+
+"{"nomorPokokWajibPajak":"001496827018000","kodeMap":"411126","kodeSetor":"100","masaPajak":"0909","tahunPajak":"2023","jumlahBayar":"780000","nomorObjekPajak":"","nomorSK":"","nomorPokokWajibPajakPenyetor":"001496827018000","namaWajibPajak":"","alamatWajibPajak":"","kota":"","nik":"","nomorPokokWajibPajakRekanan":"","nikRekanan":"","nomorFakturPajak":"","nomorSKPD":"","nomorSPM":""}"
+
+https://kejarcita.id/contoh-soal/ips-kelas-8/topik/1270
+SBP-1567/KPU.305/2023
+
+
+
+
+
+alter table tSPP add KodeBank char(3)
+Update tSPP set Kodebank='123'
+
+alter table mPerusahaan add KodeBank char(3)
+Update mPerusahaan Set KodeBank='123'
+
+alter table mPerusahaan add NamaDlmRekeningBank varchar(50)
+alter table tSPP add NamaDlmRekeningBank varchar(50)
+
+alter table mPejabat add NamaDlmRekeningBank varchar(50)
+
+CREATE TABLE [dbo].[Banks](
+	[bankCode] [char](3) NOT NULL,
+	[Nama] [varchar](50) NULL,
+ CONSTRAINT [PK_Banks] PRIMARY KEY CLUSTERED 
+(
+	[bankCode] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+insert into Banks values ('123','Bank Kalimantan Barat')
+insert into Banks values ('008','Bank mandiri')
+insert into Banks values ('002','Bank Rakyat Indonesia')
+

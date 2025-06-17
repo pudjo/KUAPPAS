@@ -1,0 +1,18 @@
+
+; Dependency file for setup wizards.
+
+; Dependencies for VpeCtrl70.ocx
+
+; Default Dependencies ----------------------------------------------
+
+[VpeCtrl70.OCX]
+Register=$(DLLSelfRegister)
+Dest=$(WinSysPath)
+Uses1=vpec3270.dll
+Uses2=
+
+
+[vpec3270.dll]
+Dest=$(WinSysPath)
+Uses1=
+
